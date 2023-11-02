@@ -14,12 +14,18 @@ import { base } from "../utils/Constants";
 type Props = {};
 
 const navRoutesAdmin = [
-  { path: "/products", name: "Products" },
   { path: "/create-product", name: "Create Product" },
   { path: "/categories", name: "Categories" },
+  { path: "/products", name: "Products" },
   { path: "/history", name: "History" },
   { path: "/", name: "Logout" },
 ];
+
+const navRoutesUser =[
+  { path: "/products", name: "Products" },
+  { path: "/history", name: "History" },
+  { path: "/", name: "Logout" },
+]
 
 const navRoutesUnauth = [
   { path: "/shop", name: "Shop" },
@@ -29,27 +35,24 @@ const navRoutesUnauth = [
 
 //#e1f8e7
 
+const getNavRoutes = (isLogged: boolean, isAdmin: boolean) => {
+  const routes = [];
+
+  if (isLogged) {
+    routes.push(...(isAdmin ? navRoutesAdmin : navRoutesUser));
+  } else {
+    routes.push(...navRoutesUnauth);
+  }
+
+  return routes;
+};
+
 const Navbar = (props: Props) => {
-  const badge = useSelector((state: any) => state.counter.value);
+  const cart = useSelector((state: any) => state.basket.items);
   const { isAdmin, isLogged } = useSelector((state: any) => state.user);
 
   const navigate = useNavigate();
-
-  // const adminUser = ()=>(
-  //   <>
-  //    <li><Link to="/create-product">Create Product</Link></li>
-  //    <li><Link to="/category">Categories</Link></li>
-  //   </>
-  // )
-
-  // const loggedRouter = () =>(
-  //   <>
-  //   <li><Link to="/history"> History </Link></li>
-  //   <li><Link to="/"> Logout </Link></li>
-
-  //   </>
-  // )
-
+  const navbarRoutes = getNavRoutes(isLogged, isAdmin);
   const loggedOut = async () => {
     await axios.get(`${base}/user/logout`,{
       withCredentials:true
@@ -57,6 +60,7 @@ const Navbar = (props: Props) => {
     localStorage.clear();
     window.location.href = "/"
   };
+  
 
   return (
     <div className=" w-full px-16 py-6 border-b border-solid text-slate-900 border-[#A0DD9F]">
@@ -70,7 +74,7 @@ const Navbar = (props: Props) => {
         </div>
         <div className="flex items-center">
           <ul className="flex gap-8 text-lg text-slate-900 mr-4">
-            {(isAdmin ? navRoutesAdmin : navRoutesUnauth).map((route) => (
+            {navbarRoutes.map((route) => (
               <li
                 key={route.path}
                 onClick={() => {
@@ -90,10 +94,10 @@ const Navbar = (props: Props) => {
           <button onClick={()=> dispatch(decrement())}>minus</button> */}
           </ul>
           {/* @ts-ignore */}
-          {isLogged ? ( <div before={`${badge}`}className={`text-3xl relative text-slate-900 before:content-[attr(before)] before:absolute before:flex before:items-center before:justify-center before:h-5 before:rounded-full before:w-5 before:bg-[#A0DD9F] before:text-stone-950 before:text-sm before:left-4 before:top-[-6px]`}
+          {isLogged ? ( <Link before={`${cart.length}`} to="/cart" className={`text-3xl relative text-slate-900 before:content-[attr(before)] before:absolute before:flex before:items-center before:justify-center before:h-5 before:rounded-full before:w-5 before:bg-[#A0DD9F] before:text-stone-950 before:text-sm before:left-4 before:top-[-6px]`}
             >
               <PiShoppingCartLight />
-            </div>
+            </Link>
           ) : null}
         </div>
       </div>
