@@ -3,12 +3,18 @@ import { TfiEmail } from "react-icons/tfi";
 import { CiLock, CiUnlock } from "react-icons/ci";
 import axios from "axios";
 import { base } from "../utils/Constants";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 type Props = {};
 
 const Login = (props: Props) => {
   const [user, setUser] = useState({ email: "", password: "" });
   const [passShow, setPassShow] = useState<boolean>(false);
+  const { isAdmin, isLogged } = useSelector((state: any) => state.user);
+  const navigate = useNavigate()
 
+
+  
   function showPass() {
     setPassShow(!passShow);
   }
@@ -27,6 +33,11 @@ const Login = (props: Props) => {
       alert(err.response.data.msg);
     }
   };
+
+
+  if(isAdmin || isLogged){
+    navigate('/')
+  }
 
   return (
     <form className="h-[80vh] p-20" onSubmit={handleLoginSubmit}>

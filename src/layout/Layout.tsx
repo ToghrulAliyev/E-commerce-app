@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import { getProducts } from "../store/slices/ApiSlice";
@@ -15,6 +15,9 @@ const Layout = (props: Props) => {
  
 
 
+  console.log("token")
+
+
   useEffect(() => {
     dispatch(getProducts() as any);
   }, [dispatch]);
@@ -25,7 +28,7 @@ const Layout = (props: Props) => {
     }
   }, [dispatch, token]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const firstlogin = localStorage.getItem("userLogin");
     if (firstlogin) {
       dispatch(refreshToken() as any);

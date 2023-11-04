@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import { base } from "../../utils/Constants";
 
 const initialState = {
@@ -8,6 +7,7 @@ const initialState = {
   status: null,
   isAdmin: false,
   isLogged: false,
+  cart: []
 };
 
 
@@ -31,6 +31,9 @@ const userSlice = createSlice({
     setLogged(state, action) {
       state.isLogged = action.payload;
     },
+    setCart(state,action) {
+      state.cart = action.payload
+    }
   },
   extraReducers: {
     [getUser.pending as any]: (state: any, action: any) => {
@@ -39,13 +42,17 @@ const userSlice = createSlice({
     [getUser.fulfilled as any]: (state: any, { payload }) => {
       state.user = payload;
       state.status = "success";
-      state.isLogged = true; // Set isLogged to true after successful getUser
-      state.isAdmin = payload.role === 1 ? true : false; // Set isAdmin based on the role
+      state.isLogged = true;  
+      state.isAdmin = payload.role === 1 ? true : false;
+      state.cart = payload.cart;
+     
     },
     [getUser.rejected as any]: (state: any, action) => {
       state.status = "failed";
     },
   },
 });
+
+export const { setCart } = userSlice.actions
 
 export const { reducer } = userSlice;

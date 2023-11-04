@@ -41,7 +41,7 @@ const ProductDetail = (props: Props) => {
           <p className="py-2 text-3xl">{selectedProduct.description}</p>
           <p>{selectedProduct.content}</p>
 
-          <span className="py-2 block text-3xl">{selectedProduct.price}</span>
+          <span className="py-2 block text-3xl">${selectedProduct.price}</span>
           <p>Sold: {selectedProduct.sold}</p>
 
           <Link

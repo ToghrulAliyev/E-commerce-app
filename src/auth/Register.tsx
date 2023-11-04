@@ -4,12 +4,16 @@ import { CiLock, CiUnlock } from "react-icons/ci";
 import axios from "axios";
 import { TfiEmail } from "react-icons/tfi";
 import { base } from "../utils/Constants";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 type Props = {};
 
 const Register = (props: Props) => {
   const [user, setUser] = useState({ name:"", email: "", password: "" });
   const [passShow, setPassShow] = useState<boolean>(false);
-
+  const { isAdmin, isLogged } = useSelector((state: any) => state.user);
+  const navigate = useNavigate()
+  
   function showPass() {
     setPassShow(!passShow);
   }
@@ -31,7 +35,9 @@ const Register = (props: Props) => {
   }
 
   
-
+  if(isAdmin || isLogged){
+    navigate('/')
+  }
  
   return (
     <div className="h-[80vh] p-20">

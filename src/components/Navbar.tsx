@@ -48,7 +48,7 @@ const getNavRoutes = (isLogged: boolean, isAdmin: boolean) => {
 };
 
 const Navbar = (props: Props) => {
-  const cart = useSelector((state: any) => state.basket.items);
+  const cart = useSelector((state: any) => state.user.cart);
   const { isAdmin, isLogged } = useSelector((state: any) => state.user);
 
   const navigate = useNavigate();

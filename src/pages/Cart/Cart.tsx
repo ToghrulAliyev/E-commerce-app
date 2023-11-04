@@ -1,22 +1,90 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import { BsTrash } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { setCart } from "../../store/slices/UserSlice";
+import { base } from "../../utils/Constants";
 
 type Props = {};
 
 const Cart = (props: Props) => {
-  const { items } = useSelector((state: any) => state.basket);
+ 
+ 
+  const basket = useSelector((state: any) => state.user.cart);
+  const user = useSelector((state: any) => state);
+  console.log("user",user)
+  const [total, setTotal] = useState(0);
+  const dispatch = useDispatch();
+  const { token } = useSelector((state: any) => state.refreshToken);
+ 
 
-  if (items?.length === 0) {
-    return <h1 className="text-center">There are no products in your cart.</h1>;
-  }
+  const addToCart = async () => {
+    await axios.patch(
+      `${base}/user/addcart`,
+      { basket },
+      {
+        headers: { Authorization: token },
+      }
+    );
+  };
+
+  useEffect(() => {
+    const getTotal = () => {
+      const total = basket?.reduce((prev: any, item: any) => {
+        return prev + item.price * item.quantity;
+      }, 0);
+      setTotal(total);
+    };
+    getTotal();
+  }, [basket]);
+
+  const increment = (id: any) => {
+    const updatedBasket = basket.map((item: any) => {
+      if (item._id === id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    dispatch(setCart(updatedBasket));
+    addToCart()
+  };
+
+  const decrement = (id: any) => {
+    const updatedBasket = basket.map((item: any) => {
+      if (item._id === id && item.quantity > 0) {
+        return {
+          ...item,
+          quantity:
+            item.quantity === 1 ? (item.quantity = 1) : item.quantity - 1,
+        };
+      }
+      return item;
+    });
+    dispatch(setCart(updatedBasket));
+    addToCart()
+  };
+
+  const removeProduct = (id: any) => {
+    if (window.confirm("Do you really want to delete this product")) {
+      const updatedBasket = basket.filter((item: any) => item._id !== id);
+      dispatch(setCart(updatedBasket));
+      addToCart()
+    }
+
+  };
+
+  console.log("basket",basket)
 
   return (
     <div className="flex justify-between px-4">
       <div className="w-[75%]">
-        {items.map((product: any) => {
+        {basket.map((product: any) => {
           return (
-            <div className="flex my-7 items-center py-8 px-8 border border-solid border-[#A0DD9F] rounded-md">
+            <div
+              key={product._id}
+              className="flex my-7 items-center py-8 px-8 border border-solid border-[#A0DD9F] rounded-md"
+            >
               <div className="flex items-center h-full">
                 <img
                   src={product.images.url}
@@ -34,17 +102,31 @@ const Cart = (props: Props) => {
                   <p>{product.content}</p>
                 </div>
                 <div className=" border-solid border-[0.5px] border-purple-500 rounded overflow-hidden flex items-center">
-                  <button className="p-2 bg-purple-300 text-white text-[1.25rem]">
+                  <button
+                    onClick={() => decrement(product._id)}
+                    className="p-2 bg-purple-300 text-white text-[1.25rem]"
+                  >
                     <AiOutlineMinus />
                   </button>
                   <span className="mx-2">{product.quantity}</span>
-                  <button className="p-2 bg-purple-300 text-white text-[1.25rem] ">
+                  <button
+                    onClick={() => increment(product._id)}
+                    className="p-2 bg-purple-300 text-white text-[1.25rem] "
+                  >
                     <AiOutlinePlus />
                   </button>
                 </div>
                 <div>
-                  <span className="py-2 block text-3xl">{product.price}</span>
+                  <span className="py-2 block text-3xl">
+                    ${product.price * product.quantity}
+                  </span>
                   <p>Sold: {product.sold}</p>
+                </div>
+                <div
+                  onClick={() => removeProduct(product._id)}
+                  className="text-xl p-1 cursor-pointer"
+                >
+                  <BsTrash />
                 </div>
               </div>
             </div>
@@ -63,7 +145,7 @@ const Cart = (props: Props) => {
         </div>
         <div className=" w-full my-4 h-[1px] bg-slate-300" />
         <div className="w-full flex justify-end">
-          <div className="font-bold">1.289,70 TL</div>
+          <div className="font-bold">${total}</div>
         </div>
       </div>
     </div>

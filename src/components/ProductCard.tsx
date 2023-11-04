@@ -1,7 +1,5 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setBasket } from "../store/slices/BasketSlice";
 import useBasket from "../common/SpecialFunctions/AddToCart";
 
 interface Product {
@@ -22,22 +20,11 @@ type ProductTpye = {
 const ProductCard = ({ product, productKey }: ProductTpye) => {
   const navigate = useNavigate();
   const { isAdmin } = useSelector((state: any) => state.user);
-  const dispatch = useDispatch();
+  const token = useSelector((state: any) => state.refreshToken);
   const { isLogged } = useSelector((state: any) => state.user);
-  const basket = useSelector((state: any) => state.basket.items);
+  const basket = useSelector((state: any) => state.user.cart);
   const { addToCart } = useBasket();
-  // function addCart(product: any) {
-  //   if (!isLogged) return alert("Please login to continue");
-  //   const check = basket.every((item: any) => {
-  //     return item._id !== product._id;
-  //   });
-
-  //   if (check) {
-  //     dispatch(setBasket([...basket, { ...product, quantity: 1 }] as any));
-  //   } else {
-  //     alert("this product has been added to cart");
-  //   }
-  // }
+ 
 
   return (
     <div
@@ -63,7 +50,7 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
         <div className="p-6">
           <h2 className="py-2 text-lg text-green-600">{product.title}</h2>
           <p className="py-2">{product.description}</p>
-          <span className="py-2 block">{product.price}</span>
+          <span className="py-2 block">${product.price}</span>
 
           {isAdmin ? (
             <div className="flex justify-between gap-3 mt-12">
@@ -83,7 +70,7 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
         </div>
       </div>
       <button
-        onClick={() => addToCart(product, isLogged, basket)}
+        onClick={() => addToCart(product, isLogged, basket, token)}
         className="px-7 py-3 bg-purple-400 ml-6 mb-6 rounded text-white"
       >
         Add to Cart

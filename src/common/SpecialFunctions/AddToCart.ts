@@ -1,10 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setBasket } from "../../store/slices/BasketSlice";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setCart } from "../../store/slices/UserSlice";
+import { base } from "../../utils/Constants";
 
 const useBasket = () => {
   const dispatch = useDispatch();
-  function addToCart(product: any,  isLogged:any, basket:any) {
- 
+  async function addToCart(product: any,  isLogged:any, basket:any, token:any) {
+
  
     if (!isLogged) return alert("Please login to continue");
     const check = basket.every((item: any) => {
@@ -12,7 +14,10 @@ const useBasket = () => {
     });
    
     if (check) {
-      dispatch(setBasket([...basket, { ...product, quantity: 1 }] as any));
+      dispatch(setCart([...basket, { ...product, quantity: 1 }] as any));
+      await axios.patch(`${base}/user/addcart`,{basket: [...basket, {...product, quantity:1}]},{
+        headers:{Authorization:token.token}
+      })
     } else {
       alert("this product has been added to cart");
     }
@@ -20,7 +25,7 @@ const useBasket = () => {
 
   return {
     addToCart,
-    // Other functions you want to expose
+    
   };
 };
 export default useBasket;
