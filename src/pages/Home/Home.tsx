@@ -6,10 +6,9 @@ import React from "react";
 type Props = {};
 
 function Home({}: Props) {
-  const listProducts = useSelector(
-    (state: any) => state.products.products.products
-  );
+  const listProducts = useSelector((state: any) => state.products.products.products);
   const productStatus = useSelector((state: any) => state.products.status);
+  
 
   if (productStatus === "loading") {
     return <Loading />;

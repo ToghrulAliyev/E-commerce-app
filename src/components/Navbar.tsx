@@ -15,7 +15,7 @@ type Props = {};
 
 const navRoutesAdmin = [
   { path: "/create-product", name: "Create Product" },
-  { path: "/categories", name: "Categories" },
+  { path: "/category", name: "Category" },
   { path: "/products", name: "Products" },
   { path: "/history", name: "History" },
   { path: "/", name: "Logout" },

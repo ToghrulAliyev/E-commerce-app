@@ -1,6 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import useBasket from "../common/SpecialFunctions/AddToCart";
+import axios from "axios";
+import { base } from "../utils/Constants";
+import { setCallback } from "../store/slices/CategorieSlice";
 
 interface Product {
   _id: number;
@@ -8,6 +11,7 @@ interface Product {
   price: number;
   description: string;
   images: {
+    public_id: any;
     url: string;
   };
 }
@@ -24,7 +28,22 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
   const { isLogged } = useSelector((state: any) => state.user);
   const basket = useSelector((state: any) => state.user.cart);
   const { addToCart } = useBasket();
- 
+  const callback = useSelector((state: any) => state.category.callback);
+  const dispatch = useDispatch()
+
+  const deleteProduct = async () => {
+    try {
+      const destroyImg = axios.post(`${base}/api/destroy`,{public_id: product.images.public_id},{
+        headers: {Authorization:token.token}
+      })
+      const deleteProduct =  axios.delete(`${base}/api/products/${product._id}`,{
+        headers: {Authorization:token}
+      })
+      await destroyImg
+      await deleteProduct
+      dispatch(setCallback(!callback as any))
+    } catch (error) {}
+  };
 
   return (
     <div
@@ -43,7 +62,7 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
           <input
             className="w-5 h-5 absolute top-4 left-4"
             type="checkbox"
-            name=""
+            // checked={product.checked}
           />
         ) : null}
         <img src={product?.images?.url} alt="" />
@@ -63,7 +82,7 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
                 >
                   Edit
                 </button>
-                <button>Delete</button>
+                <button onClick={() => deleteProduct()}>Delete</button>
               </div>
             </div>
           ) : null}

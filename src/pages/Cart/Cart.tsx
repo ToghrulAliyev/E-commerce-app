@@ -19,25 +19,17 @@ const Cart = (props: Props) => {
   const { token } = useSelector((state: any) => state.refreshToken);
  
 
-  const addToCart = async () => {
+  const addToCart = async (updatedBasket: any) => {
     await axios.patch(
       `${base}/user/addcart`,
-      { basket },
+      { basket: updatedBasket },
       {
         headers: { Authorization: token },
       }
     );
   };
 
-  useEffect(() => {
-    const getTotal = () => {
-      const total = basket?.reduce((prev: any, item: any) => {
-        return prev + item.price * item.quantity;
-      }, 0);
-      setTotal(total);
-    };
-    getTotal();
-  }, [basket]);
+
 
   const increment = (id: any) => {
     const updatedBasket = basket.map((item: any) => {
@@ -47,7 +39,7 @@ const Cart = (props: Props) => {
       return item;
     });
     dispatch(setCart(updatedBasket));
-    addToCart()
+    addToCart(updatedBasket)
   };
 
   const decrement = (id: any) => {
@@ -62,20 +54,28 @@ const Cart = (props: Props) => {
       return item;
     });
     dispatch(setCart(updatedBasket));
-    addToCart()
+    addToCart(updatedBasket)
   };
 
   const removeProduct = (id: any) => {
     if (window.confirm("Do you really want to delete this product")) {
       const updatedBasket = basket.filter((item: any) => item._id !== id);
+      console.log("updatedBasket",updatedBasket)
       dispatch(setCart(updatedBasket));
-      addToCart()
+      addToCart(updatedBasket)
     }
-
   };
 
-  console.log("basket",basket)
-
+ 
+  useEffect(() => {
+    const getTotal = () => {
+      const total = basket?.reduce((prev: any, item: any) => {
+        return prev + item.price * item.quantity;
+      }, 0);
+      setTotal(total);
+    };
+    getTotal();
+  }, [basket]);
   return (
     <div className="flex justify-between px-4">
       <div className="w-[75%]">
