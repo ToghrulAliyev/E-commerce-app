@@ -9,15 +9,11 @@ import { base } from "../../utils/Constants";
 type Props = {};
 
 const Cart = (props: Props) => {
- 
- 
   const basket = useSelector((state: any) => state.user.cart);
-  const user = useSelector((state: any) => state);
-  console.log("user",user)
+
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
   const { token } = useSelector((state: any) => state.refreshToken);
- 
 
   const addToCart = async (updatedBasket: any) => {
     await axios.patch(
@@ -29,8 +25,6 @@ const Cart = (props: Props) => {
     );
   };
 
-
-
   const increment = (id: any) => {
     const updatedBasket = basket.map((item: any) => {
       if (item._id === id) {
@@ -39,7 +33,7 @@ const Cart = (props: Props) => {
       return item;
     });
     dispatch(setCart(updatedBasket));
-    addToCart(updatedBasket)
+    addToCart(updatedBasket);
   };
 
   const decrement = (id: any) => {
@@ -54,19 +48,17 @@ const Cart = (props: Props) => {
       return item;
     });
     dispatch(setCart(updatedBasket));
-    addToCart(updatedBasket)
+    addToCart(updatedBasket);
   };
 
   const removeProduct = (id: any) => {
     if (window.confirm("Do you really want to delete this product")) {
       const updatedBasket = basket.filter((item: any) => item._id !== id);
-      console.log("updatedBasket",updatedBasket)
       dispatch(setCart(updatedBasket));
-      addToCart(updatedBasket)
+      addToCart(updatedBasket);
     }
   };
 
- 
   useEffect(() => {
     const getTotal = () => {
       const total = basket?.reduce((prev: any, item: any) => {

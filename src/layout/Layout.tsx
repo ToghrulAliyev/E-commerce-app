@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import { getProducts } from "../store/slices/ApiSlice";
@@ -14,18 +14,15 @@ const Layout = (props: Props) => {
   const token = useSelector((state: any) => state.refreshToken);
   const dispatch = useDispatch();
   const callback = useSelector((state: any) => state.category.callback);
-
-
-  console.log("token")
-
-
+  const category = useSelector((state: any) => state.products.category);
+ 
   useEffect(() => {
     dispatch(getProducts() as any);
    
-  }, [dispatch]);
+  }, [dispatch,callback]);
   useEffect(()=>{
     dispatch(getCategories() as any)
-  },[callback])
+  },[callback, category])
 
   useEffect(() => {
     if (token.token) {

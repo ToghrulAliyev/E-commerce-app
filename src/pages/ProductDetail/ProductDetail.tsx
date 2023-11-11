@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
 import { MdOutlineArrowBack } from "react-icons/md";
-import ProductCard from "../../components/ProductCard";
+import ProductCard from "../../components/Product/ProductCard";
 type Props = {};
 
 const ProductDetail = (props: Props) => {

@@ -1,11 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import useBasket from "../common/SpecialFunctions/AddToCart";
+import useBasket from "../../common/SpecialFunctions/AddToCart";
 import axios from "axios";
-import { base } from "../utils/Constants";
-import { setCallback } from "../store/slices/CategorieSlice";
+import { base } from "../../utils/Constants";
+import { setCallback } from "../../store/slices/CategorieSlice";
+import { useState } from "react";
+import Loading from "../Loading";
+import { setProducts } from "../../store/slices/ApiSlice";
 
-interface Product {
+export interface Product {
+  checked: boolean | undefined;
   _id: number;
   title: string;
   price: number;
@@ -19,32 +23,35 @@ interface Product {
 type ProductTpye = {
   productKey: number;
   product: Product;
+  listProducts: any
+  loading:boolean
+  deleteProduct:any
 };
 
-const ProductCard = ({ product, productKey }: ProductTpye) => {
+const ProductCard = ({ product, productKey,listProducts,loading, deleteProduct }: ProductTpye) => {
   const navigate = useNavigate();
   const { isAdmin } = useSelector((state: any) => state.user);
   const token = useSelector((state: any) => state.refreshToken);
   const { isLogged } = useSelector((state: any) => state.user);
   const basket = useSelector((state: any) => state.user.cart);
   const { addToCart } = useBasket();
-  const callback = useSelector((state: any) => state.category.callback);
   const dispatch = useDispatch()
 
-  const deleteProduct = async () => {
-    try {
-      const destroyImg = axios.post(`${base}/api/destroy`,{public_id: product.images.public_id},{
-        headers: {Authorization:token.token}
-      })
-      const deleteProduct =  axios.delete(`${base}/api/products/${product._id}`,{
-        headers: {Authorization:token}
-      })
-      await destroyImg
-      await deleteProduct
-      dispatch(setCallback(!callback as any))
-    } catch (error) {}
+  const handleCheck = (id: any) => {
+    const updatedListProducts = listProducts?.map((product:any) => {
+      if (product._id === id) {
+        return {
+          ...product,
+          checked: !product.checked,
+        };
+      }
+      return product;
+    });
+  
+    dispatch(setProducts(updatedListProducts));
   };
-
+ 
+  // if(loading) return <Loading />  
   return (
     <div
       className={`${
@@ -62,7 +69,8 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
           <input
             className="w-5 h-5 absolute top-4 left-4"
             type="checkbox"
-            // checked={product.checked}
+            checked={product.checked}
+            onChange={()=> handleCheck(product._id)}
           />
         ) : null}
         <img src={product?.images?.url} alt="" />
@@ -82,7 +90,7 @@ const ProductCard = ({ product, productKey }: ProductTpye) => {
                 >
                   Edit
                 </button>
-                <button onClick={() => deleteProduct()}>Delete</button>
+                <button onClick={() => deleteProduct(product._id, product.images.public_id)}>Delete</button>
               </div>
             </div>
           ) : null}

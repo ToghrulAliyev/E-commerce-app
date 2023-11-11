@@ -188,7 +188,7 @@ const CreateProduct = (props: Props) => {
                 />
                 <div
                   onClick={handleDestroy}
-                  className="p-2 cursor-pointer z-10 absolute top-0 right-0"
+                  className="p-2 cursor-pointer z-50 absolute top-0 right-0"
                 >
                   {onEdit ? "" : <AiOutlineClose />}
                 </div>
@@ -196,9 +196,9 @@ const CreateProduct = (props: Props) => {
             )}
           </div>
         </div>
-        <p className="backdrop-blur-lg text-center w-[450px] mt-4">
+        {images ? <p className="backdrop-blur-lg text-center w-[450px] mt-4">
           Click Image to Change{" "}
-        </p>
+        </p> : null}
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-1/2 px-4">
