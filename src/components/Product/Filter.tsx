@@ -38,16 +38,16 @@ const Filter = (props: Props) => {
     dispatch(setCallback(!callback as any));
   };
   return (
-    <div className="flex justify-between mt-4">
+    <div className="justify-between mt-4  lg:flex hidden">
       <div className="flex items-center mr-4">
         <span>Filters: </span>
         <select
-          className="border ml-2 border-purple-300 px-4 py-2 outline-none"
+          className="border rounded-md ml-2 border-purple-300 px-4 py-2 outline-none"
           name="category"
           value={category}
           onChange={handleCategory}
         >
-           <option value="" selected={category === ""}>All Products</option>
+           <option value="" >All Products</option>
           {categories.map((category: any) => (
             <option value={category.name} key={category._id}>
               {category.name}
@@ -57,20 +57,20 @@ const Filter = (props: Props) => {
       </div>
       <form onSubmit={handleSearch} className="flex gap-4 w-full">
         <input
-          className="border border-purple-300 px-4 py-2 outline-none w-full"
+          className="border rounded-md border-purple-300 px-4 py-2 outline-none w-full"
           type="text"
           placeholder="Search product name"
           value={search}
           onChange={(e: any) => dispatch(setSearch(e.target.value))}
         />
         <button type="submit">
-          <BsSearch className="text-2xl text-purple-300" />
+          <BsSearch className="text-2xl  text-purple-300" />
         </button>
       </form>
       <div className="flex items-center ml-4">
         <span>Sort: </span>
         <select
-          className="border border-purple-300 px-4 py-2 outline-none ml-4"
+          className="border rounded-md border-purple-300 px-4 py-2 outline-none ml-4"
           value={sort}
           onChange={(e: any) => {
             dispatch(setSort(e.target.value)),

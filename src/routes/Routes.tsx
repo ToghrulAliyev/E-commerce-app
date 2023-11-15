@@ -1,5 +1,11 @@
 import Login from "../auth/Login";
 import Register from "../auth/Register";
+import Adress from "../pages/Account/components/Adress";
+import ChangePassword from "../pages/Account/components/ChangePassword";
+import Favorites from "../pages/Account/components/Favorites";
+import MemberInfo from "../pages/Account/components/MemberInfo";
+import MyOrders from "../pages/Account/components/MyOrders";
+import RegisteredCards from "../pages/Account/components/RegisteredCards";
 import Cart from "../pages/Cart/Cart";
 import Category from "../pages/Category/Category";
 import CreateProduct from "../pages/CreateProduct/CreateProduct";
@@ -44,6 +50,30 @@ export const PageRoutes: PageRoute[] = [
   {
     path: "/detail/:id",
     component: <ProductDetail />,
+  },
+  {
+    path: "/account/my-orders",
+    component: <MyOrders />,
+  },
+  {
+    path: "/account/favorites",
+    component: <Favorites />,
+  },
+  {
+    path: "/account/membership",
+    component: <MemberInfo />,
+  },
+  {
+    path: "/account/address",
+    component: <Adress />,
+  },
+  {
+    path: "/account/cards",
+    component: <RegisteredCards />,
+  },
+  {
+    path: "/account/change-password",
+    component: <ChangePassword />,
   },
   {
     path: "*",

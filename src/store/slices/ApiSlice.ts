@@ -72,18 +72,18 @@ const productsSlice = createSlice({
       state.result = action.payload
     },
   },
-  extraReducers: {
-    [getProducts.pending as any]: (state: any, action: any) => {
+  extraReducers: (builder) => {
+    builder.addCase(getProducts.pending, (state: any) => {
       state.status = "loading";
-    },
-    [getProducts.fulfilled as any]: (state: any, { payload }) => {
+    });
+    builder.addCase(getProducts.fulfilled, (state:any, { payload }) => {
       state.products = payload;
-      state.result = payload.result
+      state.result = payload.result;
       state.status = "success";
-    },
-    [getProducts.rejected as any]: (state: any, action) => {
+    });
+    builder.addCase(getProducts.rejected, (state:any) => {
       state.status = "failed";
-    },
+    });
   },
 });
 export const {setProducts, setCategory, setSort, setSearch, setPage,setResult} = productsSlice.actions;

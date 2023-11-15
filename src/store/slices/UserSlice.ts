@@ -35,21 +35,20 @@ const userSlice = createSlice({
       state.cart = action.payload
     }
   },
-  extraReducers: {
-    [getUser.pending as any]: (state: any, action: any) => {
+  extraReducers: (builder) => {
+    builder.addCase(getUser.pending, (state:any) => {
       state.status = "loading";
-    },
-    [getUser.fulfilled as any]: (state: any, { payload }) => {
+    });
+    builder.addCase(getUser.fulfilled, (state:any, { payload }) => {
       state.user = payload;
       state.status = "success";
-      state.isLogged = true;  
+      state.isLogged = true;
       state.isAdmin = payload.role === 1 ? true : false;
       state.cart = payload.cart;
-     
-    },
-    [getUser.rejected as any]: (state: any, action) => {
+    });
+    builder.addCase(getUser.rejected, (state:any) => {
       state.status = "failed";
-    },
+    });
   },
 });
 

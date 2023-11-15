@@ -43,7 +43,7 @@ const Layout = (props: Props) => {
       <header>
         <Navbar />
       </header>
-      <div className="max-w-screen-xl min-h-screen m-auto  ">
+      <div className="2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm min-h-screen m-auto sm:px-16 px-6">
         {props.children}
       </div>
       {/* <footer className="absolute bottom-0 w-full h-16 bg-slate-500">This is footer</footer> */}

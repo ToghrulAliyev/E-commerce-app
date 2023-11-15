@@ -30,17 +30,17 @@ const categorySlice = createSlice({
       state.callback = action.payload
     }
   },
-  extraReducers: {
-    [getCategories.pending as any]: (state: any, action: any) => {
+  extraReducers: (builder) => {
+    builder.addCase(getCategories.pending, (state:any) => {
       state.status = "loading";
-    },
-    [getCategories.fulfilled as any]: (state: any, { payload }) => {
+    });
+    builder.addCase(getCategories.fulfilled, (state:any, { payload }) => {
       state.categories = payload;
       state.status = "success";
-    },
-    [getCategories.rejected as any]: (state: any, action) => {
+    });
+    builder.addCase(getCategories.rejected, (state:any) => {
       state.status = "failed";
-    },
+    });
   },
 });
 

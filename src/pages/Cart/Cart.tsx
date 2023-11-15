@@ -52,11 +52,11 @@ const Cart = (props: Props) => {
   };
 
   const removeProduct = (id: any) => {
-    if (window.confirm("Do you really want to delete this product")) {
+    // if (window.confirm("Do you really want to delete this product")) {
       const updatedBasket = basket.filter((item: any) => item._id !== id);
       dispatch(setCart(updatedBasket));
       addToCart(updatedBasket);
-    }
+    // }
   };
 
   useEffect(() => {

@@ -19,10 +19,10 @@ const tokenSlice = createSlice({
       state.token = action.payload;
     },
   },
-  extraReducers: {
-    [refreshToken.fulfilled as any]: (state, action) => {
-      state.token = action.payload;
-    },
+  extraReducers: (builder) => {
+    builder.addCase(refreshToken.fulfilled, (state, { payload }) => {
+      state.token = payload;
+    });
   },
 });
 

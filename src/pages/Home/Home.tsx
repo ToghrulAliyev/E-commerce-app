@@ -15,7 +15,7 @@ function Home({}: Props) {
   const listProducts = useSelector(
     (state: any) => state.products.products.products
   );
-  const state = useSelector((state: any) => state);
+ 
   const productStatus = useSelector((state: any) => state.products.status);
   const [isChecked, setIsChecked] = useState(false);
   const { isAdmin } = useSelector((state: any) => state.user);
