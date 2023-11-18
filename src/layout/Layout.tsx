@@ -5,6 +5,7 @@ import { getProducts } from "../store/slices/ApiSlice";
 import { refreshToken } from "../store/slices/TokenSlice";
 import { getUser } from "../store/slices/UserSlice";
 import { getCategories } from "../store/slices/CategorieSlice";
+import NavCategories from "../components/NavbarCategories/NavCategories";
 
 type Props = {
   children: React.ReactNode;
@@ -42,6 +43,7 @@ const Layout = (props: Props) => {
     <div className="relative">
       <header>
         <Navbar />
+        <NavCategories />
       </header>
       <div className="2xl:max-w-screen-2xl xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm min-h-screen m-auto sm:px-16 px-6">
         {props.children}

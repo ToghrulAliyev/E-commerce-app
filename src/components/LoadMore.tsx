@@ -9,9 +9,7 @@ const LoadMore = (props: Props) => {
   const result = useSelector((state: any) => state.products.result);
   const dispatch = useDispatch();
   const callback = useSelector((state: any) => state.category.callback);
-  console.log("result", result);
-  console.log("page", page);
-  console.log("page*9", page * 9);
+ 
   return (
     <div className="flex justify-center my-8">
       {result < page * 11 ? null : (

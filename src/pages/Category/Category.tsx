@@ -3,19 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCallback, setCategories } from "../../store/slices/CategorieSlice";
 import axios from "axios";
 import { base } from "../../utils/Constants";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const Category = (props: Props) => {
   const categories = useSelector((state: any) => state.category.categories);
   const callback = useSelector((state: any) => state.category.callback);
-
+  const { isAdmin, isLogged } = useSelector((state: any) => state.user);
   const dispatch = useDispatch();
   const [category, setCategory] = useState("");
   const [edit, setEdit] = useState(false);
   const [id, setId] = useState("");
   const { token } = useSelector((state: any) => state.refreshToken);
-
+  const navigate = useNavigate()
   const createCategory = async (e: any) => {
     e.preventDefault();
     try {
@@ -57,6 +58,9 @@ const Category = (props: Props) => {
     } catch (error) {
         
     }
+  }
+  if(isAdmin || isLogged){
+    navigate('/')
   }
 
   return (

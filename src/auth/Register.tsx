@@ -52,7 +52,7 @@ const Register = (props: Props) => {
             type="text"
             name="name"
             required
-            placeholder="Name"
+            placeholder="Full Name"
             onChange={onChangeInput}
             value={user.name}
             className="rounded !bg-white border border-solid border-[#edf1f2] h-[55px] w-full px-16  "

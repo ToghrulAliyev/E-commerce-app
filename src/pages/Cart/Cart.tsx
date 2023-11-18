@@ -68,6 +68,7 @@ const Cart = (props: Props) => {
     };
     getTotal();
   }, [basket]);
+  
   return (
     <div className="flex justify-between px-4">
       <div className="w-[75%]">
@@ -126,14 +127,14 @@ const Cart = (props: Props) => {
         })}
       </div>
       <div className="border border-solid border-gray-200  p-4 h-[16.5rem] mt-7 w-[25%] ml-7 shadow-[rgba(0,_0,_0,_0.14)_0px_3px_8px] sticky top-5">
-        <h1 className="text-2xl mb-4">Siparis ozeti</h1>
+        <h1 className="text-2xl mb-4">Order summary</h1>
         <div className="flex justify-between mb-3">
-          <span className="text-sm">Ürünün Toplamı</span>
-          <div className="font-bold">839,80 TL</div>
+          <span className="text-sm">Total of Product</span>
+          <div className="font-bold">${total - 18}</div>
         </div>
         <div className="flex justify-between mb-3">
-          <span className="text-sm">Kargo Toplam</span>
-          <div className="font-bold">29,99 TL</div>
+          <span className="text-sm">Shipping Total</span>
+          <div className="font-bold">$18</div>
         </div>
         <div className=" w-full my-4 h-[1px] bg-slate-300" />
         <div className="w-full flex justify-end">

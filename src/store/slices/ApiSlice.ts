@@ -30,7 +30,7 @@ export const getProducts = createAsyncThunk(
     const { page,category, sort, search } = state.products;
 
     const searchParams = new URLSearchParams();
-    searchParams.append('limit', String(page *10));
+    searchParams.append('limit', String(page *11));
     searchParams.append('sort', sort);
     searchParams.append('title[regex]', search);
     const getAllProductsEndpoint = `${base}/api/products?${searchParams.toString()}`;

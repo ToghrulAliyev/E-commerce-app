@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../../components/Loading";
@@ -8,7 +8,7 @@ type Props = {};
 
 const ProductDetail = (props: Props) => {
   const params = useParams();
-
+  const productRef = useRef(null)
   const listProducts = useSelector(
     (state: any) => state.products.products.products
   );
@@ -31,9 +31,9 @@ const ProductDetail = (props: Props) => {
   return (
     <>
       {/* <button className="cursor-pointer p-3 bg-slate-400 text-2xl"> <MdOutlineArrowBack /></button> */}
-      <div className="flex my-28  py-8 px-8 border border-solid border-[#A0DD9F]">
+      <div ref={productRef} className="flex my-28  py-8 px-8 border border-solid border-[#A0DD9F]">
         <img src={selectedProduct.images.url} alt="" className="w-[40%]" />
-        <div className="ml-10 flex flex-col ">
+        <div className="ml-10 flex flex-col justify-between">
           <div>
             <div className="flex text-green-600 items-center">
               <h1 className="  text-2xl ">{selectedProduct.title}</h1>
@@ -65,7 +65,7 @@ const ProductDetail = (props: Props) => {
           {listProducts.map((product: any) => {
             return product.category === selectedProduct.category ? (
               <React.Fragment key={product._id}>
-                <ProductCard product={product} productKey={product._id} listProducts={listProducts} loading={false} deleteProduct={undefined} />
+                <ProductCard product={product} productKey={product._id} listProducts={listProducts} loading={false} deleteProduct={undefined} productRef={productRef} />
               </React.Fragment>
             ) : null;
           })}

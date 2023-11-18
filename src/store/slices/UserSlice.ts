@@ -7,7 +7,9 @@ const initialState = {
   status: null,
   isAdmin: false,
   isLogged: false,
-  cart: []
+  cart: [],
+  favorites: [],
+  isFav:false
 };
 
 
@@ -33,6 +35,12 @@ const userSlice = createSlice({
     },
     setCart(state,action) {
       state.cart = action.payload
+    },
+    setFavorites(state,action) {
+      state.favorites = action.payload
+    },
+    setIsFav(state,action){
+      state.isFav = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -45,6 +53,7 @@ const userSlice = createSlice({
       state.isLogged = true;
       state.isAdmin = payload.role === 1 ? true : false;
       state.cart = payload.cart;
+      state.favorites = payload.favorites
     });
     builder.addCase(getUser.rejected, (state:any) => {
       state.status = "failed";
@@ -52,6 +61,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { setCart } = userSlice.actions
+export const { setCart, setFavorites, setIsFav } = userSlice.actions
 
 export const { reducer } = userSlice;
