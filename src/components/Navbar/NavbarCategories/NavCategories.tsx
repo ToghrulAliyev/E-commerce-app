@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import SubNav from "../SubNav";
 import { navItems } from "../NavCategories";
@@ -6,9 +6,8 @@ import { navItems } from "../NavCategories";
 type Props = {};
 
 const NavCategories = (props: Props) => {
-  
-
   const [openSubNav, setOpenSubNav] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>("");
   // group at parent
   // group-hover:children
   return (
@@ -23,19 +22,32 @@ const NavCategories = (props: Props) => {
           className={`text-xl  ${openSubNav ? "rotate-90" : ""} duration-300`}
         />
       </div>
-      {navItems.map((item: any) => (
-        <>
+      {navItems.map((category: any) => (
+        <React.Fragment key={category.title}>
           <div
-            onMouseOver={() => setOpenSubNav(true)}
-            onMouseLeave={() => setOpenSubNav(false)}
-            className="flex items-center h-full px-3 hover:bg-gray-200 duration-300"
+            onMouseOver={() => {
+              setOpenSubNav(true);
+              setActiveTab(category.title);
+            }}
+            onMouseLeave={() => {
+              setOpenSubNav(false);
+              setActiveTab("");
+            }}
+            className={`flex items-center h-full px-3 ${
+              activeTab === category.title ? "bg-gray-200" : ""
+            } duration-300`}
           >
-            {item.title}
+            {category.title}
           </div>
-        </>
+        </React.Fragment>
       ))}
 
-      <SubNav openSubNav={openSubNav} setOpenSubNav={setOpenSubNav} />
+      <SubNav
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        openSubNav={openSubNav}
+        setOpenSubNav={setOpenSubNav}
+      />
     </div>
   );
 };
