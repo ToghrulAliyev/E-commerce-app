@@ -33,7 +33,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 14px ;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -89,3 +89,23 @@ input:focus {
   border: 1px solid red !important;
 } */
 
+
+ 
+
+.category-scrollbar::-webkit-scrollbar {
+  background: red ;
+  width: 0.3rem;
+}
+
+.category-scrollbar::-webkit-scrollbar-thumb {
+    width: 0.3rem;
+    background: rgb(97, 97, 97);
+    border-radius: 6px; 
+    box-shadow: inset 0 0 4px white;
+    
+}
+.category-scrollbar::-webkit-scrollbar-track {
+    background: lightgray;
+    box-shadow: inset 0 0 7px lightgray;
+
+}

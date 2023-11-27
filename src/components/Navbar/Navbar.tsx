@@ -5,7 +5,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { PiShoppingCartLight, PiUserThin } from "react-icons/pi";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { base } from "../utils/Constants";
+import { base } from "../../utils/Constants";
 
 type Props = {};
 
@@ -90,13 +90,13 @@ const Navbar = (props: Props) => {
       <div className="flex justify-between w-full max-w-screen-xl m-auto">
         <div
           onClick={() => navigate("/")}
-          className="cursor-pointer flex gap-2 items-center text-[#A0DD9F] text-xl"
+          className="cursor-pointer flex gap-2 items-center text-[#A0DD9F] text-sm"
         >
           <HiOutlineShoppingBag className="text-3xl" />
           Softrade
         </div>
         <div className="flex items-center">
-          <ul className="gap-8 text-lg text-slate-900 mr-4 md:flex hidden">
+          <ul className="gap-8 text-sm text-slate-900 mr-4 md:flex hidden">
             {navbarRoutes.map((route: any) => (
               <div key={route.name} className="flex gap-1 items-center">
                  {route?.icon ? route.icon : null}

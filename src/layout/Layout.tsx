@@ -1,11 +1,11 @@
 import React, { useEffect, useLayoutEffect,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import { getProducts } from "../store/slices/ApiSlice";
 import { refreshToken } from "../store/slices/TokenSlice";
 import { getUser } from "../store/slices/UserSlice";
 import { getCategories } from "../store/slices/CategorieSlice";
-import NavCategories from "../components/NavbarCategories/NavCategories";
+import NavCategories from "../components/Navbar/NavbarCategories/NavCategories";
 
 type Props = {
   children: React.ReactNode;
@@ -40,7 +40,7 @@ const Layout = (props: Props) => {
 
 
   return (
-    <div className="relative">
+    <div className="relative text-sm">
       <header>
         <Navbar />
         <NavCategories />
