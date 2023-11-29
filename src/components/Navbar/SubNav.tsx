@@ -30,7 +30,7 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
   return (
     <div
       onMouseOver={() => setOpenSubNav(true)}
-      onMouseLeave={() => {setOpenSubNav(false); setActiveTab("");}}
+      onMouseLeave={() => {setOpenSubNav(true); setActiveTab("");}}
       className={`${
         openSubNav ? "visible opacity-100" : "invisible opacity-0 "
       } h-[600px] duration-200 absolute flex w-full   bg-gray-100 gap-4 z-[301]  top-[99%] delay-300`}
@@ -87,7 +87,7 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
               <div className="flex mb-4 text-xl text-red-500 items-center gap-2">
                 <h1>{detail.subCategoryTitle}</h1>
               </div>
-              <div className="category-scrollbar flex flex-wrap overflow-y-auto">
+              <div className="category-scrollbar flex flex-wrap overflow-y-auto gap-4">
                 {detail?.categoryDetails?.map((categoryDetail: any) => (
                   <div key={categoryDetail.detailedSubId} className="flex flex-col flex-[0_0_14%] mb-3 items-center cursor-pointer ">
                     <div className="w-[82px] h-[82px] rounded-full bg-gray-300 overflow-hidden hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:scale-105 duration-300 mb-1">
@@ -97,7 +97,7 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
                         alt=""
                       />
                     </div>
-                    <span>{categoryDetail.title}</span>
+                    <span className="text-center">{categoryDetail.title}</span>
                   </div>
                 ))}
               </div>

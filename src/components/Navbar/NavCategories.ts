@@ -623,20 +623,132 @@ export const navItems = [
             title: "Rain boots",
           },
         ],
+    },
+    {
+      subCategoryTitle: "SNEAKERS",
+      categoryDetails: [
+        {
+          detailedSubId: 121,
+          image: "/images/shoe/subcategory/sneakers/casual.png",
+          title: "Casual shoes",
+        },
+        {
+          detailedSubId: 122,
+          image: "/images/shoe/subcategory/sneakers/sport.png",
+          title: "Sports shoes",
+        },
+        {
+          detailedSubId: 123, 
+          image: "/images/shoe/subcategory/sneakers/wedge.png",
+          title: "Wedge sneakers",
+        },
+      ],
+     },
+     {
+      subCategoryTitle: "SLIPPERS",
+      categoryDetails: [
+        {
+          detailedSubId: 124,
+          image: "/images/shoe/subcategory/slippers/slides.png",
+          title: "Slides",
+        },
+        {
+          detailedSubId: 125,
+          image: "/images/shoe/subcategory/slippers/home.png",
+          title: "Home slippers",
+        },
+        {
+          detailedSubId: 126,
+          image: "/images/shoe/subcategory/slippers/flip.png",
+          title: "Flip-flops",
+        },
+      ],
+     },
+     {
+      subCategoryTitle: "SANDALS",
+      categoryDetails: [
+        {
+          detailedSubId: 127,
+          image: "/images/shoe/subcategory/sandals/flat.png",
+          title: "Flat sandals",
+        },
+        {
+          detailedSubId: 128,
+          image: "/images/shoe/subcategory/sandals/heeled.png",
+          title: "Heeled sandals",
+        },
+        {
+          detailedSubId: 129,
+          image: "/images/shoe/subcategory/sandals/platform.png",
+          title: "Platforms & wedge sandals",
+        },
+        {
+          detailedSubId: 130,
+          image: "/images/shoe/subcategory/sandals/sport.png",
+          title: "Sports sandals",
+        },
+      ],
+    },
+    {
+      subCategoryTitle: "BRANDS",
+      categoryDetails: [
+        {
+          detailedSubId: 127,
+          image: "/images/shoe/subcategory/brands/styleoop.png",
+          title: "Styleloop",
+        },
+        {
+          detailedSubId: 128,
+          image: "/images/shoe/subcategory/brands/cucoo.png",
+          title: "CUCCOO",
+        },
+      ],
     }
     ]
   },
   {
     id: 5,
-    title: "Home & Kitchen",
+    title: "Bags & Luggage",
+    subCategory: [
+      {
+        subId: 43,
+        image: "/images/bags/categories/women-bags.png",
+        title: "Women Bags",
+      },
+      {
+        subId: 44,
+        image: "/images/bags/categories/men-bags.png",
+        title: "Men Bags",
+      },
+      {
+        subId: 45,
+        image: "/images/bags/categories/luggage-and-travel-bags.png",
+        title: "Luggage & Travel Bags",
+      },
+      {
+        subId: 46,
+        image: "/images/bags/categories/wallets-and-cardholders.png",
+        title: "Wallets & Cardholders",
+      },
+      {
+        subId: 47,
+        image: "/images/bags/categories/bag-accessories.png",
+        title: "Bag Accessories",
+      },
+      {
+        subId: 48,
+        image: "/images/bags/categories/functional-bags.png",
+        title: "Functional Bags",
+      },
+    ]
   },
   {
     id: 6,
-    title: "Bags & Luggage",
+    title: "Beauty & Health",
   },
   {
     id: 7,
-    title: "Beauty & Health",
+    title: "Automative",
   },
   {
     id: 8,
