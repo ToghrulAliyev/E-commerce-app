@@ -9,8 +9,6 @@ type Props = {};
 
 const Favorites = (props: Props) => {
   const favoriteProducts = useSelector((state: any) => state.user.favorites);
-
-  console.log("favoriteProductsfavoriteProducts", favoriteProducts);
   return (
     <MyAccout>
       <div id="favorite" className="mt-24 pl-7 pt-2  w-full">

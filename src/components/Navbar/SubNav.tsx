@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { TbCategory } from "react-icons/tb";
 import { navItems } from "./NavCategories";
@@ -8,15 +8,20 @@ type Props = {
   setOpenSubNav: (value: boolean) => void;
   activeTab:string;
   setActiveTab: (value: string) => void;
+  openCategory:string;
+  setOpenCategory:(value: string) => void;
 };
 
-const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab }) => {
+const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab, openCategory, setOpenCategory }) => {
+
+  
+  
   const womenClothingSubcategory = navItems.find(
-    (item) => item.title === "Women Clothing"
+    (item) => item.title === openCategory
   );
 
   if (!womenClothingSubcategory) {
-    alert("test");
+    console.log("there is not such category")
   }
 
 
@@ -25,7 +30,7 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab 
   return (
     <div
       onMouseOver={() => setOpenSubNav(true)}
-      onMouseLeave={() => setOpenSubNav(false)}
+      onMouseLeave={() => {setOpenSubNav(false); setActiveTab("");}}
       className={`${
         openSubNav ? "visible opacity-100" : "invisible opacity-0 "
       } h-[600px] duration-200 absolute flex w-full   bg-gray-100 gap-4 z-[301]  top-[99%] delay-300`}
@@ -33,12 +38,12 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab 
       <div className="p-10 flex overflow-hidden w-full">
         <div className="flex flex-col w-[30%]">
           {navItems.map((category: any) => {
-            console.log("11111111",category.title === activeTab)
+           
            return(
             <div
             key={category.title}
-            onMouseOver={() =>  setActiveTab(category.title)}
-            onMouseLeave={() =>  setActiveTab("")}
+            onMouseOver={() =>  {setActiveTab(category.title); setOpenCategory(category.title);}}
+         
             className={`flex p-3 justify-between  ${activeTab === category.title ? "bg-gray-200" : ""} duration-200 items-center`}>
               <div className="">{category.title}</div>
               <div>

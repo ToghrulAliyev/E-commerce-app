@@ -32,7 +32,7 @@ const useBasket = () => {
 
   async function addToFavorites(product: any,isLogged: any,allFavorites: any,token: any) {
     if (!isLogged) return alert("Please login to continue");
-    console.log("allFavorites",allFavorites)
+     
     dispatch(setFavorites([...allFavorites, { ...product }] as any));
     await axios.patch(
       `${base}/user/addfavorites`,
@@ -49,7 +49,7 @@ const useBasket = () => {
     token: any
   ) {
     if (!isLogged) return alert("Please login to continue");
-    console.log("allFavorites",updatedFav)
+ 
     dispatch(setFavorites([...updatedFav] as any));
     await axios.patch(
       `${base}/user/addfavorites`,
