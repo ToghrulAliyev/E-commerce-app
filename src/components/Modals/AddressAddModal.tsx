@@ -116,7 +116,7 @@ const AddressAddModal: FC<Props> = ({ openModal, setOpenModal }) => {
             </div>
             <button
               type="submit"
-              className="px-6 py-4 rounded-md text-green-800 bg-[#A0DD9F] hover:bg-[#5cd35a] duration-300 mt-4"
+              className="px-6 py-4 rounded-md text-black bg-[#F3EEEA] hover:bg-[#EBE3D5] duration-300 mt-4"
             >
               Save
             </button>

@@ -1,13 +1,13 @@
-export const navItems = [
+export const navCategories = [
   {
     id: 1,
     title: "Women Clothing",
     subCategory: [
-      {
-        subId: 1,
-        image: "/images/women/categories/newin.png",
-        title: "New in",
-      },
+      // {
+      //   subId: 1,
+      //   image: "/images/women/categories/newin.png",
+      //   title: "New in",
+      // },
       {
         subId: 2,
         image: "/images/women/categories/dress.png",
@@ -23,11 +23,11 @@ export const navItems = [
         image: "/images/women/categories/denim.png",
         title: "Denim",
       },
-      {
-        subId: 5,
-        image: "/images/women/categories/loungewear.png",
-        title: "Loungewear",
-      },
+      // {
+      //   subId: 5,
+      //   image: "/images/women/categories/loungewear.png",
+      //   title: "Loungewear",
+      // },
       {
         subId: 6,
         image: "/images/women/categories/co-ords.png",
@@ -53,11 +53,11 @@ export const navItems = [
         image: "/images/women/categories/sweater.png",
         title: "Sweaters",
       },
-      {
-        subId: 11,
-        image: "/images/women/categories/jumpsuits.png",
-        title: "Jumpsuits & bodysuits",
-      },
+      // {
+      //   subId: 11,
+      //   image: "/images/women/categories/jumpsuits.png",
+      //   title: "Jumpsuits & bodysuits",
+      // },
       {
         subId: 12,
         image: "/images/women/categories/partywear.png",
@@ -203,11 +203,11 @@ export const navItems = [
         image: "/images/men/categories/accessoires.png",
         title: "Accessories",
       },
-      {
-        subId: 22,
-        image: "/images/men/categories/activewear.png",
-        title: "Activewear",
-      },
+      // {
+      //   subId: 22,
+      //   image: "/images/men/categories/activewear.png",
+      //   title: "Activewear",
+      // },
     ],
     detailedSubCategory:[
       {
@@ -334,21 +334,21 @@ export const navItems = [
         image: "/images/womenJew/categories/fineJew.png",
         title: "Fine jewelry",
       },
-      {
-        subId: 28,
-        image: "/images/womenJew/categories/belt.png",
-        title: "Belts",
-      },
+      // {
+      //   subId: 28,
+      //   image: "/images/womenJew/categories/belt.png",
+      //   title: "Belts",
+      // },
       {
         subId: 29,
         image: "/images/womenJew/categories/watch.png",
         title: "Watches",
       },
-      {
-        subId: 30,
-        image: "/images/womenJew/categories/glove.png",
-        title: "Gloves",
-      },
+      // {
+      //   subId: 30,
+      //   image: "/images/womenJew/categories/glove.png",
+      //   title: "Gloves",
+      // },
       {
         subId: 31,
         image: "/images/womenJew/categories/jewPack.png",
@@ -693,12 +693,12 @@ export const navItems = [
       subCategoryTitle: "BRANDS",
       categoryDetails: [
         {
-          detailedSubId: 127,
+          detailedSubId: 131,
           image: "/images/shoe/subcategory/brands/styleoop.png",
           title: "Styleloop",
         },
         {
-          detailedSubId: 128,
+          detailedSubId: 132,
           image: "/images/shoe/subcategory/brands/cucoo.png",
           title: "CUCCOO",
         },
@@ -712,50 +712,287 @@ export const navItems = [
     subCategory: [
       {
         subId: 43,
-        image: "/images/bags/categories/women-bags.png",
+        image: "/images/bags/categories/women.png",
         title: "Women Bags",
       },
       {
         subId: 44,
-        image: "/images/bags/categories/men-bags.png",
+        image: "/images/bags/categories/men.png",
         title: "Men Bags",
       },
       {
         subId: 45,
-        image: "/images/bags/categories/luggage-and-travel-bags.png",
+        image: "/images/bags/categories/luggage.png",
         title: "Luggage & Travel Bags",
       },
       {
         subId: 46,
-        image: "/images/bags/categories/wallets-and-cardholders.png",
+        image: "/images/bags/categories/wallets.png",
         title: "Wallets & Cardholders",
       },
       {
         subId: 47,
-        image: "/images/bags/categories/bag-accessories.png",
-        title: "Bag Accessories",
-      },
-      {
-        subId: 48,
-        image: "/images/bags/categories/functional-bags.png",
+        image: "/images/bags/categories/functional.png",
         title: "Functional Bags",
       },
+    ],
+    detailedSubCategory:[
+      {
+        subCategoryTitle: "WOMEN BAGS",
+        categoryDetails: [
+          {
+            detailedSubId: 133,
+            image: "/images/bags/subcategory/women/shoulder.png",
+            title: "Shoulder bags",
+          },
+          {
+            detailedSubId: 134,
+            image: "/images/bags/subcategory/women/crossbody.png",
+            title: "Crossbody",
+          },
+          {
+            detailedSubId: 135,
+            image: "/images/bags/subcategory/women/satchels.png",
+            title: "Satchels",
+          },
+          {
+            detailedSubId: 136,
+            image: "/images/bags/subcategory/women/tote.png",
+            title: "Tote bags",
+          },
+          {
+            detailedSubId: 137,
+            image: "/images/bags/subcategory/women/wallets.png",
+            title: "Wallets & cardholders",
+          },
+        ],
+    },
+    {
+      subCategoryTitle: "MEN BAGS",
+      categoryDetails: [
+        {
+          detailedSubId: 138,
+          image: "/images/bags/subcategory/men/briefcase.png",
+          title: "Briefcase",
+        },
+        {
+          detailedSubId: 139,
+          image: "/images/bags/subcategory/men/backpacks.png",
+          title: "Backpacks",
+        },
+        {
+          detailedSubId: 140,
+          image: "/images/bags/subcategory/men/clutches.png",
+          title: "Clutches & wristlet bags",
+        },
+        {
+          detailedSubId: 141,
+          image: "/images/bags/subcategory/men/tote.png",
+          title: "Tote bags",
+        },
+      ],
+     },
+     {
+      subCategoryTitle: "LUGGAGE & TRAVEL BAGS",
+      categoryDetails: [
+        {
+          detailedSubId: 142,
+          image: "/images/bags/subcategory/luggage/travel.png",
+          title: "Travel bags",
+        },
+        {
+          detailedSubId: 143,
+          image: "/images/bags/subcategory/luggage/luggage.png",
+          title: "Luggage",
+        },
+        {
+          detailedSubId: 144,
+          image: "/images/bags/subcategory/luggage/travel_bag.png",
+          title: "Travel bag accs",
+        },
+      ],
+    },
+    {
+      subCategoryTitle: "FUNCTIONAL BAGS",
+      categoryDetails: [
+        {
+          detailedSubId: 145,
+          image: "/images/bags/subcategory/functional/sports.png",
+          title: "Sports bag",
+        },
+        {
+          detailedSubId: 146,
+          image: "/images/bags/subcategory/functional/lunch.png",
+          title: "Lunch bag",
+        },
+        {
+          detailedSubId: 147,
+          image: "/images/bags/subcategory/functional/tool.png",
+          title: "Tool bag",
+        },
+        {
+          detailedSubId: 148,
+          image: "/images/bags/subcategory/functional/laptop.png",
+          title: "Laptop bag",
+        },
+      ],
+  }
     ]
   },
   {
     id: 6,
     title: "Beauty & Health",
+    subCategory: [
+      {
+        subId: 48,
+        image: "/images/beauty/categories/makeup.png",
+        title: "Makeup",
+      },
+      {
+        subId: 49,
+        image: "/images/beauty/categories/beauty.jpg",
+        title: "Beauty Tools",
+      },
+      {
+        subId: 50,
+        image: "/images/beauty/categories/nail.jpg",
+        title: "Nail Hand & Foot Care",
+      },
+      {
+        subId: 51,
+        image: "/images/beauty/categories/hair.jpg",
+        title: "Hair",
+      },
+      {
+        subId: 52,
+        image: "/images/beauty/categories/personal-care.jpg",
+        title: "Personal Care",
+      },
+      {
+        subId: 53,
+        image: "/images/beauty/categories/wigs.jpg",
+        title: "Wigs & Accs",
+      },
+    ],
+    detailedSubCategory:[
+      {
+        subCategoryTitle: "MAKEUP",
+        categoryDetails: [
+          {
+            detailedSubId: 149,
+            image: "/images/beauty/subcategory/makeup/face.jpg",
+            title: "Face make up",
+          },
+          {
+            detailedSubId: 150,
+            image: "/images/beauty/subcategory/makeup/eye.jpg",
+            title: "Eye make up",
+          },
+          {
+            detailedSubId: 151,
+            image: "/images/beauty/subcategory/makeup/lips.jpg",
+            title: "Lips",
+          },
+          {
+            detailedSubId: 152,
+            image: "/images/beauty/subcategory/makeup/makeup_brushes.png",
+            title: "Makeup brushes",
+          },
+          {
+            detailedSubId: 153,
+            image: "/images/beauty/subcategory/makeup/sponges.png",
+            title: "Sponges & blenders",
+          },
+          {
+            detailedSubId: 154,
+            image: "/images/beauty/subcategory/makeup/eyelashes.jpg",
+            title: "Eyelashes",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "BEAUTY TOOLS",
+        categoryDetails: [
+          {
+            detailedSubId: 155,
+            image: "/images/beauty/subcategory/tools/nail_decorations.jpg",
+            title: "Nail art decorations",
+          },
+          {
+            detailedSubId: 156,
+            image: "/images/beauty/subcategory/tools/nails.png",
+            title: "Press on nails",
+          },
+          {
+            detailedSubId: 157,
+            image: "/images/beauty/subcategory/tools/nail_art_tools.jpg",
+            title: "Nail art tools",
+          },
+          {
+            detailedSubId: 158,
+            image: "/images/beauty/subcategory/tools/skin_care.png",
+            title: "Skin care tools",
+          },
+          {
+            detailedSubId: 159,
+            image: "/images/beauty/subcategory/tools/hair_tools.png",
+            title: "Hair tools",
+          },
+        ],
+    },
+    {
+      subCategoryTitle: "PERSONAL CARE",
+      categoryDetails: [
+        {
+          detailedSubId: 155,
+          image: "/images/beauty/subcategory/personal/skin.png",
+          title: "Skin care",
+        },
+        {
+          detailedSubId: 156,
+          image: "/images/beauty/subcategory/personal/body.jpg",
+          title: "Body care",
+        },
+        {
+          detailedSubId: 157,
+          image: "/images/beauty/subcategory/personal/hair.jpg",
+          title: "Hair cares",
+        },
+      ],
+    },
+    {
+      subCategoryTitle: "WIGS & ACCS",
+      categoryDetails: [
+        {
+          detailedSubId: 155,
+          image: "/images/beauty/subcategory/wigs/synthetic.jpg",
+          title: "Synthetic hair wigs",
+        },
+        {
+          detailedSubId: 156,
+          image: "/images/beauty/subcategory/wigs/human.png",
+          title: "Human hair wigs",
+        },
+        {
+          detailedSubId: 157,
+          image: "/images/beauty/subcategory/wigs/wig-tools.jpg",
+          title: "Wig caps & tools",
+        },
+      ],
+    }
+    ]
   },
-  {
-    id: 7,
-    title: "Automative",
-  },
-  {
-    id: 8,
-    title: "Electronics",
-  },
-  {
-    id: 9,
-    title: "Toys & Games",
-  },
+
 ];
+  // {
+  //   id: 7,
+  //   title: "Electronics",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Automative",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Toys & Games",
+  // },

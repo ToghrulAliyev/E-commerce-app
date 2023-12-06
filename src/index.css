@@ -109,3 +109,33 @@ input:focus {
     box-shadow: inset 0 0 7px lightgray;
 
 }
+
+body.scrollbar-hidden {
+  overflow-y: hidden;
+  scrollbar-gutter: inherit;
+}
+
+/* Calculate and compensate for the scrollbar width */
+body.scrollbar-hidden.compensate-scrollbar {
+  margin-right: calc(-1 * (100vw - 100%));
+}
+
+/* Style the scrollbar (optional) */
+body.scrollbar-hidden::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Optional: Customize scrollbar track */
+body.scrollbar-hidden::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Optional: Customize scrollbar thumb */
+body.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Optional: Customize scrollbar corner */
+body.scrollbar-hidden::-webkit-scrollbar-corner {
+  background: #f1f1f1;
+}

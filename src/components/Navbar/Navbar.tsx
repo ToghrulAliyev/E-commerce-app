@@ -11,23 +11,16 @@ type Props = {};
 
 const navRoutesAdmin = [
   { path: "/create-product", name: "Create Product" },
-  { path: "/category", name: "Category" },
+  // { path: "/category", name: "Category" },
   {
     path: "/account/favorites",
     name: "Favorites",
-    icon: <CiHeart className="text-[#A0DD9F] text-3xl" />,
-  },
-  {
-    path: "/account/my-orders",
-    name: "My Orders",
-    icon: (
-      <BsTruck  className="text-[#A0DD9F] text-3xl" />
-    ),
+    icon: <CiHeart className="text-2xl" />,
   },
   {
     path: "/account/my-orders",
     name: "Account",
-    icon: <PiUserThin className="text-[#A0DD9F] text-2xl" />,
+    icon: <PiUserThin className="text-2xl" />,
   },
   { path: "/", name: "Logout" },
 ];
@@ -36,17 +29,12 @@ const navRoutesUser = [
   {
     path: "/account/favorites",
     name: "Favorites",
-    icon: <CiHeart className="text-[#A0DD9F] text-3xl" />,
-  },
-  {
-    path: "/account/my-orders",
-    name: "My Orders",
-    icon: <BsTruck  className="text-[#A0DD9F] text-3xl" />,
+    icon: <CiHeart className="text-2xl" />,
   },
   {
     path: "/account/my-orders",
     name: "Account",
-    icon: <PiUserThin className="text-[#A0DD9F] text-2xl" />,
+    icon: <PiUserThin className=" text-2xl" />,
   },
   { path: "/", name: "Logout" },
 ];
@@ -86,11 +74,11 @@ const Navbar = (props: Props) => {
   };
 
   return (
-    <div className="w-full px-16 py-6 border-b border-solid text-slate-900 border-[#A0DD9F]">
+    <div className="w-full px-16 py-6 border-b border-solid text-slate-900 border-gray-600">
       <div className="flex justify-between w-full max-w-screen-xl m-auto">
         <div
           onClick={() => navigate("/")}
-          className="cursor-pointer flex gap-2 items-center text-[#A0DD9F] text-sm"
+          className="cursor-pointer flex gap-2 items-center text-gray-600 text-2xl"
         >
           <HiOutlineShoppingBag className="text-3xl" />
           Softrade
@@ -98,7 +86,7 @@ const Navbar = (props: Props) => {
         <div className="flex items-center">
           <ul className="gap-8 text-sm text-slate-900 mr-4 md:flex hidden">
             {navbarRoutes.map((route: any) => (
-              <div key={route.name} className="flex gap-1 items-center">
+              <div key={route.name} className="flex gap-1 items-center hover:text-red-500 hover:cursor-pointer   duration-300">
                  {route?.icon ? route.icon : null}
                 <li
                   onClick={() => {
@@ -109,7 +97,7 @@ const Navbar = (props: Props) => {
                       navigate(route.path);
                     }
                   }}
-                  className="hover:cursor-pointer hover:text-[#A0DD9F] duration-300"
+                  className=""
                 >
                   {route.name}
                 </li>
@@ -120,7 +108,7 @@ const Navbar = (props: Props) => {
           </ul>
           {isLogged ? (
             /* @ts-ignore */
-            <Link before={`${cart.length}`} to="/cart" className={`text-3xl relative text-slate-900 before:content-[attr(before)] before:absolute before:flex before:items-center before:justify-center before:h-5 before:rounded-full before:w-5 before:bg-[#A0DD9F] before:text-stone-950 before:text-sm before:left-4 before:top-[-6px]`}>
+            <Link before={`${cart.length}`} to="/cart" className={`text-3xl relative text-slate-900 before:content-[attr(before)] before:absolute before:flex before:items-center before:justify-center before:h-5 before:rounded-full before:w-5 before:bg-gray-500 before:text-white before:text-sm before:left-4 before:top-[-6px]`}>
               <PiShoppingCartLight />
             </Link>
           ) : null}

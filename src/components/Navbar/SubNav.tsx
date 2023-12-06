@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { TbCategory } from "react-icons/tb";
-import { navItems } from "./NavCategories";
+import { navCategories } from "./NavCategories";
 
 type Props = {
   openSubNav: boolean;
@@ -16,28 +16,29 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
 
   
   
-  const womenClothingSubcategory = navItems.find(
-    (item) => item.title === openCategory
-  );
+  const getWomenClothingSubcategory = (title: string) => {
+    return navCategories.find((item) => item.title === title);
+  };
+
+  const womenClothingSubcategory = getWomenClothingSubcategory(openCategory);
 
   if (!womenClothingSubcategory) {
-    console.log("there is not such category")
+    console.log("There is no such category");
   }
 
-
-  console.log("activeTab",activeTab)
-
+  useEffect(()=>{
+  },[womenClothingSubcategory])
   return (
     <div
       onMouseOver={() => setOpenSubNav(true)}
-      onMouseLeave={() => {setOpenSubNav(true); setActiveTab("");}}
+      onMouseLeave={() => {setOpenSubNav(false); setActiveTab("");}}
       className={`${
         openSubNav ? "visible opacity-100" : "invisible opacity-0 "
       } h-[600px] duration-200 absolute flex w-full   bg-gray-100 gap-4 z-[301]  top-[99%] delay-300`}
     >
       <div className="p-10 flex overflow-hidden w-full">
         <div className="flex flex-col w-[30%]">
-          {navItems.map((category: any) => {
+          {navCategories.map((category: any) => {
            
            return(
             <div
@@ -63,7 +64,7 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
             {womenClothingSubcategory?.subCategory?.map((subcategory: any) => {
               return (
                 <div key={subcategory.title} className="flex flex-col flex-[0_0_33%] mb-3 items-center cursor-pointer ">
-                  <div className="w-[82px] h-[82px] rounded-full bg-gray-300 overflow-hidden hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:scale-105 duration-300 mb-1">
+                  <div  className="w-[82px] h-[82px] rounded-full bg-gray-300 overflow-hidden hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:scale-105 duration-300 mb-1">
                     <img
                       className="w-full h-full bg-cover"
                       src={subcategory.image}

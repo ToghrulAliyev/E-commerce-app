@@ -1,5 +1,6 @@
 import React from "react";
 import MyAccout from "..";
+import PrimaryButton from "../../../components/Buttons/PrimaryButton";
 
 type Props = {};
 
@@ -51,12 +52,9 @@ const MemberInfo = (props: Props) => {
               />
             </div>
             <div className="flex justify-end ">
-              <button
-                type="submit"
-                className="px-6 py-4 rounded-md text-green-800 bg-[#A0DD9F] hover:bg-[#5cd35a] duration-300 mt-4"
-              >
-                Save
-              </button>
+            <PrimaryButton extraClassName="mt-4">
+              Save
+            </PrimaryButton>
             </div>
           </div>
         </form>

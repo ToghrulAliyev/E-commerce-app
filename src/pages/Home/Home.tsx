@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { setProducts } from "../../store/slices/ApiSlice";
 import axios from "axios";
 import { base } from "../../utils/Constants";
-import { setCallback } from "../../store/slices/CategorieSlice";
+import { setCallback } from "../../store/slices/CallbackSlice";
 import Filter from "../../components/Product/Filter";
 import LoadMore from "../../components/LoadMore";
 
@@ -21,7 +21,7 @@ function Home({}: Props) {
   const { isAdmin } = useSelector((state: any) => state.user);
   const [loading, setLoading] = useState(false);
   const token = useSelector((state: any) => state.refreshToken);
-  const callback = useSelector((state: any) => state.category.callback);
+  const callback = useSelector((state: any) => state.callback.callback);
 
   const dispatch = useDispatch();
 
@@ -72,7 +72,7 @@ function Home({}: Props) {
   return (
     <>
       <Filter />
-      {isAdmin ? (
+      {/* {isAdmin ? (
         <div className="mt-6 w-full flex justify-end gap-6 text-lg items-center">
           <span> Select All </span>
           <input
@@ -89,7 +89,7 @@ function Home({}: Props) {
             Delete All
           </button>
         </div>
-      ) : null}
+      ) : null} */}
 
       <div className="w-full flex mt-12 gap-4 flex-wrap">
         {listProducts?.map((products: any) => (

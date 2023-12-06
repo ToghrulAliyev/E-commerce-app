@@ -11,6 +11,7 @@ type Props = {};
 const Cart = (props: Props) => {
   const basket = useSelector((state: any) => state.user.cart);
 
+  console.log("basket",basket)
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
   const { token } = useSelector((state: any) => state.refreshToken);
@@ -76,7 +77,7 @@ const Cart = (props: Props) => {
           return (
             <div
               key={product._id}
-              className="flex my-7 items-center py-8 px-8 border border-solid border-[#A0DD9F] rounded-md"
+              className="flex my-7 items-center py-8 px-8 border border-solid border-gray-500 rounded-md"
             >
               <div className="flex items-center h-full">
                 <img
@@ -86,25 +87,25 @@ const Cart = (props: Props) => {
                 />
               </div>
               <div className="ml-10 w-full justify-between flex  items-center h-full gap-8">
-                <div>
-                  <div className="flex text-green-600 items-center gap-4 w-[420px]">
-                    <h1 className="  text-base ">{product.title}</h1>
-                    {/* <h1 className=" text-2xl">{product.product_id}</h1> */}{" "}
-                    |<p className="py-2 text-sm">{product.description}</p>
+                <div className="flex flex-col items-start">
+                  <div className=" text-red-600 items-center   w-[420px]">
+                    <h1 className="text-lg mb-1">{product.title}</h1>
+                
+                    <p className=" text-sm">{product.description}</p>
                   </div>
                   <p>{product.content}</p>
                 </div>
-                <div className=" border-solid border-[0.5px] border-purple-500 rounded overflow-hidden flex items-center">
+                <div className=" border-solid border-[0.5px] border-gray-500 rounded overflow-hidden flex items-center">
                   <button
                     onClick={() => decrement(product._id)}
-                    className="p-2 bg-purple-300 text-white text-[1.25rem]"
+                    className="p-2 bg-gray-100 text-black text-[1.25rem]"
                   >
                     <AiOutlineMinus />
                   </button>
-                  <span className="mx-2">{product.quantity}</span>
+                  <span className="mx-2 text-lg">{product.quantity}</span>
                   <button
                     onClick={() => increment(product._id)}
-                    className="p-2 bg-purple-300 text-white text-[1.25rem] "
+                    className="p-2 bg-gray-100 text-black text-[1.25rem] "
                   >
                     <AiOutlinePlus />
                   </button>

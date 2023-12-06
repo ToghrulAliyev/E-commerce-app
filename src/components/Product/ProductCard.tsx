@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useBasket from "../../common/SpecialFunctions/AddToCart";
 import axios from "axios";
 import { base } from "../../utils/Constants";
-import { setCallback } from "../../store/slices/CategorieSlice";
+import { setCallback } from "../../store/slices/CallbackSlice";
 import { useState, useEffect } from "react";
 import Loading from "../Loading";
 import { setProducts } from "../../store/slices/ApiSlice";
@@ -98,9 +98,13 @@ const ProductCard = ({
     }
   }, [product._id, allFavorites]);
   
+
+  // let sold = Math.floor(Math.random()*200)
+
+
   return (
     <div
-      className={`border border-solid overflow-hidden border-gray-300 2xl:flex-[0_0_19.08%] xl:flex-[0_0_23.95%] lg:flex-[0_0_32.13%] md:flex-[0_0_31.6%] sm:flex-[0_0_100%] flex-[0_0_100%] rounded-xl relative hover:shadow-2xl duration-300`}
+      className={` overflow-hidden  2xl:flex-[0_0_19.08%] xl:flex-[0_0_23.95%] lg:flex-[0_0_32.13%] md:flex-[0_0_31.6%] sm:flex-[0_0_100%] flex-[0_0_100%] relative hover:shadow-2xl duration-300`}
     >
       <div
         className="flex flex-col gap-[10px] justify-between h-full"
@@ -137,23 +141,23 @@ const ProductCard = ({
           </div>
 
           <div className="p-2 ">
-            <div className="w-full h-24">
-              <h2 className="py-1 text-xs text-green-600">{product.title}</h2>
-              <p className="py-1 text-sm ">{product.description}</p>
+            <div className="w-full ">
+              <h2 className=" text-lg text-red-600">{product.title}</h2>
+              <p className=" text-sm ">{product.description}</p>
             </div>
-            <div className="flex justify-between mt-4">
-              <span className="py-2 block">${product.price}</span>
+            <div className="flex justify-between mt-4 items-center">
+              <span className="py-2 block text-xl text-red-500">${product.price} </span>
 
               <button
                 onClick={() => addToCart(product, isLogged, basket, token)}
-                className="px-3 flex justify-center items-center  rounded-md border-[0.5px] border-solid border-black z-[300]"
+                className="px-3 flex justify-center items-center  rounded-md border-[0.5px] border-solid border-black z-[300] h-10"
               >
                 <LiaCartPlusSolid className="text-xl" />
               </button>
             </div>
 
             {isAdmin ? (
-              <div className="flex justify-between gap-3 mt-12">
+              <div className="flex justify-between gap-3 mt-3">
                 <button onClick={() => navigate(`/detail/${product._id}`)}>
                   View
                 </button>

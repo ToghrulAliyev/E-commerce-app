@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import ProductCard from "../../../components/Product/ProductCard";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
+import PrimaryButton from "../../../components/Buttons/PrimaryButton";
 
 type Props = {};
 
@@ -18,15 +19,12 @@ const Favorites = (props: Props) => {
           <div className="flex flex-col justify-center items-center py-40 gap-6">
             <div className="flex justify-center items-center w-20 h-20 bg-[#f7f7f7] rounded-full text-5xl">
               {" "}
-              <FaRegHeart /> 
+              <FaRegHeart />
             </div>
             <p>No order was found for your account.</p>
-            <Link
-              to="/"
-              className="px-6 py-4 rounded-md text-green-800 bg-[#A0DD9F] hover:bg-[#5cd35a] duration-300"
-            >
-              Start shopping
-            </Link>
+            <PrimaryButton>
+              <Link to="/">Start shopping</Link>
+            </PrimaryButton>
           </div>
         ) : (
           <div className="flex gap-4 flex-wrap mt-8">

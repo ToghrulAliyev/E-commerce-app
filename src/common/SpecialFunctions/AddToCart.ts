@@ -17,10 +17,10 @@ const useBasket = () => {
     });
 
     if (check) {
-      dispatch(setCart([...basket, { ...product }] as any));
+      dispatch(setCart([...basket, { ...product, quantity: 1 }] as any));
       await axios.patch(
         `${base}/user/addcart`,
-        { basket: [...basket, { ...product }] },
+        { basket: [...basket, { ...product, quantity: 1 }] },
         {
           headers: { Authorization: token.token },
         }

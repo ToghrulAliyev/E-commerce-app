@@ -5,6 +5,7 @@ import axios from "axios";
 import { base } from "../utils/Constants";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import PrimaryButton from "../components/Buttons/PrimaryButton";
 type Props = {};
 
 const Login = (props: Props) => {
@@ -44,7 +45,7 @@ const Login = (props: Props) => {
       <h1 className="text-center text-4xl">Login</h1>
       <div className="mt-8 flex justify-center items-center flex-col gap-2">
         <div className="w-1/2 flex justify-center items-center relative">
-          <TfiEmail className="text-[#A0DD9F] text-2xl absolute left-[1.4rem]" />
+          <TfiEmail className="text-red-500 text-2xl absolute left-[1.4rem]" />
           <input
             type="email"
             name="email"
@@ -59,12 +60,12 @@ const Login = (props: Props) => {
           {passShow ? (
             <CiUnlock
               onClick={() => showPass()}
-              className="text-[#A0DD9F] cursor-pointer text-3xl absolute left-[1.2rem]"
+              className="text-red-500 cursor-pointer text-3xl absolute left-[1.2rem]"
             />
           ) : (
             <CiLock
               onClick={() => showPass()}
-              className="text-[#A0DD9F] cursor-pointer text-3xl absolute left-[1.2rem]"
+              className="text-red-500 cursor-pointer text-3xl absolute left-[1.2rem]"
             />
           )}
 
@@ -77,12 +78,9 @@ const Login = (props: Props) => {
             value={user.password}
           />
         </div>
-        <button
-          className="px-6 py-3 bg-green-500 hover:bg-green-600 duration-300 text-white rounded"
-          type="submit"
-        >
+        <PrimaryButton type="submit">
           Login
-        </button>
+        </PrimaryButton>
       </div>
     </form>
   );

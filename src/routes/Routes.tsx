@@ -7,7 +7,7 @@ import MemberInfo from "../pages/Account/components/MemberInfo";
 import MyOrders from "../pages/Account/components/MyOrders";
 import RegisteredCards from "../pages/Account/components/RegisteredCards";
 import Cart from "../pages/Cart/Cart";
-import Category from "../pages/Category/Category";
+// import Category from "../pages/Category/Category";
 import CreateProduct from "../pages/CreateProduct/CreateProduct";
 import Home from "../pages/Home/Home";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
@@ -35,10 +35,10 @@ export const PageRoutes: PageRoute[] = [
     path: "/cart",
     component: <Cart />,
   },
-  {
-    path: "/category",
-    component: <Category />,
-  },
+  // {
+  //   path: "/category",
+  //   component: <Category />,
+  // },
   {
     path: "/create-product",
     component: <CreateProduct />,

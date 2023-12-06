@@ -3,7 +3,8 @@ import CounterSlice from "./slices/CounterSlice";
 import { reducer as productsSliceReducer } from "./slices/ApiSlice";
 import {  reducer as tokenSliceReducer } from "./slices/TokenSlice";
 import {  reducer as userSliceReducer } from "./slices/UserSlice";
-import {  reducer as categorySlice } from "./slices/CategorieSlice";
+import {  reducer as callBackSlice } from "./slices/CallbackSlice";
+ 
 
 
 export const store = configureStore({
@@ -12,6 +13,6 @@ export const store = configureStore({
     products: productsSliceReducer,
     refreshToken: tokenSliceReducer,
     user: userSliceReducer,
-    category: categorySlice
-  },
+    callback: callBackSlice,
+   },
 });

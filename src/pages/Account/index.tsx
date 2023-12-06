@@ -69,7 +69,7 @@ const MyAccout = ({ children }: Props) => {
           <div key={link.name}>
             <Link
               to={link.link}
-              className={`hover:bg-gray-100 ${childrenId === link.id ? "bg-[#edf8ed] text-[#3ca735]" : "" }  duration-300 flex px-6 py-6 items-center gap-2 rounded-lg`}
+              className={`hover:bg-gray-100 ${childrenId === link.id ? "bg-[#F3EEEA] text-gray-500" : "" }  duration-300 flex px-6 py-6 items-center gap-2 rounded-lg`}
             >
               {link.icon}
               {link.name}

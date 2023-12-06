@@ -6,6 +6,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { base } from "../utils/Constants";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import PrimaryButton from "../components/Buttons/PrimaryButton";
 type Props = {};
 
 const Register = (props: Props) => {
@@ -47,7 +48,7 @@ const Register = (props: Props) => {
         className="mt-8 flex justify-center items-center flex-col gap-2"
       >
         <div className="w-1/2 flex justify-center items-center relative">
-          <PiUserThin className="text-[#A0DD9F] text-3xl absolute left-[1.2rem]" />
+          <PiUserThin className="text-red-500 text-3xl absolute left-[1.2rem]" />
           <input
             type="text"
             name="name"
@@ -59,7 +60,7 @@ const Register = (props: Props) => {
           />
         </div>
         <div className="w-1/2 flex justify-center items-center relative">
-        <TfiEmail className="text-[#A0DD9F] text-2xl absolute left-[1.4rem]" />
+        <TfiEmail className="text-red-500 text-2xl absolute left-[1.4rem]" />
           <input
             type="email"
             name="email"
@@ -74,12 +75,12 @@ const Register = (props: Props) => {
           {passShow ? (
             <CiUnlock
               onClick={() => showPass()}
-              className="text-[#A0DD9F] cursor-pointer text-3xl absolute left-[1.2rem]"
+              className="text-red-500 cursor-pointer text-3xl absolute left-[1.2rem]"
             />
           ) : (
             <CiLock
               onClick={() => showPass()}
-              className="text-[#A0DD9F] cursor-pointer text-3xl absolute left-[1.2rem]"
+              className="text-red-500 cursor-pointer text-3xl absolute left-[1.2rem]"
             />
           )}
 
@@ -92,12 +93,9 @@ const Register = (props: Props) => {
             value={user.password}
           />
         </div>
-        <button
-          className="px-6 py-3 bg-green-500 hover:bg-green-600 duration-300 text-white rounded"
-          type="submit"
-        >
+        <PrimaryButton type="submit">
           Register
-        </button>
+        </PrimaryButton>
       </form>
     </div>
   );

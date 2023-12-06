@@ -4,9 +4,8 @@ import Navbar from "../components/Navbar/Navbar";
 import { getProducts } from "../store/slices/ApiSlice";
 import { refreshToken } from "../store/slices/TokenSlice";
 import { getUser } from "../store/slices/UserSlice";
-import { getCategories } from "../store/slices/CategorieSlice";
-import NavCategories from "../components/Navbar/NavbarCategories/NavCategories";
-
+ import NavCategories from "../components/Navbar/NavbarCategories/NavCategories";
+ 
 type Props = {
   children: React.ReactNode;
 };
@@ -14,16 +13,13 @@ type Props = {
 const Layout = (props: Props) => {
   const token = useSelector((state: any) => state.refreshToken);
   const dispatch = useDispatch();
-  const callback = useSelector((state: any) => state.category.callback);
-  const category = useSelector((state: any) => state.products.category);
- 
+  const callback = useSelector((state: any) => state.callback.callback);
+  
   useEffect(() => {
     dispatch(getProducts() as any);
    
   }, [dispatch,callback]);
-  useEffect(()=>{
-    dispatch(getCategories() as any)
-  },[callback, category])
+ 
 
   useEffect(() => {
     if (token.token) {

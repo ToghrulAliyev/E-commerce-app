@@ -1,6 +1,7 @@
 import {useState} from "react";
 import MyAccout from "..";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import PrimaryButton from "../../../components/Buttons/PrimaryButton";
 
 type Props = {};
 
@@ -26,7 +27,7 @@ const ChangePassword = (props: Props) => {
                 name="oldpass"
                 placeholder="Old Password"
               />
-              {oldPassShow ? <FaEye onClick={()=>setOldPassShow(!oldPassShow)} className="absolute right-3 top-8 text-[#A0DD9F] cursor-pointer text-xl" /> : <FaEyeSlash onClick={()=>setOldPassShow(!oldPassShow)} className="absolute right-3 top-8 text-[#A0DD9F] cursor-pointer text-xl" /> }
+              {oldPassShow ? <FaEye onClick={()=>setOldPassShow(!oldPassShow)} className="absolute right-3 top-8 text-red-500 cursor-pointer text-xl" /> : <FaEyeSlash onClick={()=>setOldPassShow(!oldPassShow)} className="absolute right-3 top-8 text-red-500 cursor-pointer text-xl" /> }
               
             </div>
             <div className="flex mt-6 flex-col gap-2 relative">
@@ -37,7 +38,7 @@ const ChangePassword = (props: Props) => {
                 name="newpass"
                 placeholder="New Password"
               />
-               {newPassShow ? <FaEye onClick={()=>setNewPassShow(!newPassShow)} className="absolute right-3 top-8 text-[#A0DD9F] cursor-pointer text-xl" /> : <FaEyeSlash onClick={()=>setNewPassShow(!newPassShow)} className="absolute right-3 top-8 text-[#A0DD9F] cursor-pointer text-xl" /> }
+               {newPassShow ? <FaEye onClick={()=>setNewPassShow(!newPassShow)} className="absolute right-3 top-8 text-red-500 cursor-pointer text-xl" /> : <FaEyeSlash onClick={()=>setNewPassShow(!newPassShow)} className="absolute right-3 top-8 text-red-500 cursor-pointer text-xl" /> }
             </div>
             <div className="flex mt-6 flex-col gap-2 relative">
               <label htmlFor="repeatpass">Repeat Password</label>
@@ -47,16 +48,16 @@ const ChangePassword = (props: Props) => {
                 name="repeatpass"
                 placeholder="Repeat Password"
               />
-               {repeatPassShow ? <FaEye onClick={()=>setRepeatPassShow(!repeatPassShow)} className="absolute right-3 top-8 text-[#A0DD9F] cursor-pointer text-xl" /> : <FaEyeSlash onClick={()=>setRepeatPassShow(!repeatPassShow)} className="absolute right-3 top-8 text-[#A0DD9F] cursor-pointer text-xl" /> }
+               {repeatPassShow ? <FaEye onClick={()=>setRepeatPassShow(!repeatPassShow)} className="absolute right-3 top-8 text-red-500 cursor-pointer text-xl" /> : <FaEyeSlash onClick={()=>setRepeatPassShow(!repeatPassShow)} className="absolute right-3 top-8 text-red-500 cursor-pointer text-xl" /> }
             </div>
           </div>
           <div className="w-1/2">
-          <button
+          <PrimaryButton
                 type="submit"
-                className="px-7 py-4 rounded-md text-green-800 bg-[#A0DD9F] hover:bg-[#5cd35a] duration-300 mt-4 flex"
+                extraClassName="mt-5"
               >
                 Update
-              </button>
+              </PrimaryButton>
               </div>
         </form>
       </div>

@@ -17,7 +17,7 @@ const Adress = (props: Props) => {
       <div id="address" className="mt-24 pl-7 pt-2  w-full">
         <div className="flex justify-between">
           <h1 className="text-3xl font-bold ">Adress</h1>
-          <button onClick={()=> setOpenModal(!openModal)} className="flex items-center gap-1 px-2 rounded border border-solid border-green-400 text text-green-400 hover:border-green-500 duration-300 hover:text-green-500">
+          <button onClick={()=> setOpenModal(!openModal)} className="flex items-center gap-1 px-2 rounded border border-solid border-[#EBE3D5] text text-gray-500 hover:border-[#EBE3D5] duration-300 hover:text-black">
             <BsPlus />
             Add New Address
           </button>
