@@ -6,7 +6,6 @@ import axios from "axios";
 import { base } from "../../utils/Constants";
 import Loading from "../../components/Loading";
 import { useNavigate, useParams } from "react-router-dom";
-import { setProducts } from "../../store/slices/ApiSlice";
 import { setCallback } from "../../store/slices/CallbackSlice";
 import { navCategories } from "../../components/Navbar/NavCategories";
 type Props = {};
@@ -21,8 +20,6 @@ interface product {
   category: string;
   subcategory: string;
   detailedSubCategory: string;
-  color: string;
-  size: string;
 }
 const initialState = {
   product_id: "",
@@ -33,20 +30,24 @@ const initialState = {
   category: "",
   subcategory: "",
   detailedSubCategory: "",
-  color: "",
-  size: "",
 };
+
+const sizeOptions = [
+  { key: "xs", value: "XS" },
+  { key: "s", value: "S" },
+  { key: "m", value: "M" },
+  { key: "l", value: "L" },
+  { key: "xl", value: "XL" },
+];
 
 const CreateProduct = (props: Props) => {
   const [currentProducts, setCurrentProducts] = useState<product>(initialState);
-  // const categories = useSelector((state: any) => state.callback.categories);
-  // const subcategories = useSelector((state: any) => state.subcategory.subcategories);
-
-
-  console.log("currentProducts",currentProducts)
-
   const [images, setImages] = useState<any>(false);
   const [loading, setLoading] = useState(false);
+  const [size, setSize] = useState<any>([]);
+  const [selectedColor, setSelectedColor] = useState("");
+  const [colorName, setColorName] = useState("");
+  const [color, setColor] = useState<any>([]);
   const { isAdmin } = useSelector((state: any) => state.user);
   const { token } = useSelector((state: any) => state.refreshToken);
   const params = useParams();
@@ -58,8 +59,7 @@ const CreateProduct = (props: Props) => {
   const callback = useSelector((state: any) => state.callback.callback);
   const [onEdit, setOnEdit] = useState(false);
 
-  // dispatch(setProducts)
-
+  console.log("images123123", images);
   useEffect(() => {
     if (params.id) {
       setOnEdit(true);
@@ -88,7 +88,6 @@ const CreateProduct = (props: Props) => {
         return alert(
           "This file type is not supported. Please upload a JPG or PNG file."
         );
-
       let formData = new FormData();
       formData.append("file", file);
       setLoading(true);
@@ -126,6 +125,29 @@ const CreateProduct = (props: Props) => {
     setCurrentProducts({ ...currentProducts, [name]: value });
   };
 
+  console.log("selected", size);
+  const handleChange = (event: any) => {
+    const optionValue = event.target.value;
+    const newSelectedOptions = size.includes(optionValue)
+      ? size.filter((option: any) => option !== optionValue)
+      : [...size, optionValue];
+
+    setSize(newSelectedOptions);
+  };
+
+  const handleColorChange = (event: any) => {
+    const newColor = event.target.value;
+    setSelectedColor(newColor);
+  };
+
+  const handleAddColor = () => {
+    if (selectedColor && colorName) {
+      setColor([...color, { colorName, color: selectedColor }]);
+      setSelectedColor("");
+      setColorName("");
+    }
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
@@ -136,7 +158,7 @@ const CreateProduct = (props: Props) => {
       if (onEdit) {
         await axios.put(
           `${base}/api/products/${currentProducts._id}`,
-          { ...currentProducts, images },
+          { ...currentProducts, images, color, size },
           {
             headers: { Authorization: token },
           }
@@ -144,7 +166,7 @@ const CreateProduct = (props: Props) => {
       } else {
         await axios.post(
           `${base}/api/products`,
-          { ...currentProducts, images },
+          { ...currentProducts, images, color, size },
           {
             headers: { Authorization: token },
           }
@@ -158,9 +180,11 @@ const CreateProduct = (props: Props) => {
       alert(error);
     }
   };
-  if (!isAdmin) {
-    navigate("/");
-  }
+  useEffect(() => {
+    if (!isAdmin) {
+      navigate("/");
+    }
+  }, []);
   return (
     <div className="flex w-full justify-between p-4 mt-12">
       <div className="flex flex-col w-1/2">
@@ -284,27 +308,70 @@ const CreateProduct = (props: Props) => {
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="color">Color</label>
-          <input
-            type="text"
-            name="color"
-            id="color"
-            required
-            value={currentProducts.color}
-            className="border rounded py-2 pl-2"
-            onChange={handleChangeInput}
-          />
+          <div className="flex gap-4 items-center">
+            <div className="flex items-center">
+              <input
+                type="color"
+                name="color"
+                id="color"
+                required
+                value={selectedColor}
+                className="h-10"
+                onChange={handleColorChange}
+              />
+              <input
+                type="text"
+                className="border rounded py-2 pl-2 ml-4"
+                placeholder="Color Name"
+                value={colorName}
+                onChange={(e) => setColorName(e.target.value)}
+              />
+            </div>
+            <button
+              className="bg-purple-300 p-2 rounded-sm"
+              type="button"
+              onClick={handleAddColor}
+            >
+              Add Color
+            </button>
+          </div>
+
+          <div>
+            <h4>Selected Colors:</h4>
+            <ul>
+              {color.map((color: any, index: any) => {
+                console.log("colorLlll", color);
+                return (
+                  <li
+                    className={`p-2 m-1 text-black`}
+                    style={{ backgroundColor: color }}
+                    key={index}
+                  >
+                   {`${color.colorName}: ${color.color}`} {/* Display both color name and value */}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="size">Size</label>
-          <input
-            type="text"
-            name="size"
-            id="size"
-            required
-            value={currentProducts.size}
-            className="border rounded py-2 pl-2"
-            onChange={handleChangeInput}
-          />
+          <div className="flex justify-between">
+            {sizeOptions.map((option: any) => (
+              <div key={option.key} className="flex gap-2 items-center">
+                <div>{option.value}</div>
+                <input
+                  type="checkbox"
+                  name="size"
+                  id={option.key} // Use a unique identifier for each checkbox
+                  value={option.key} // Set the value to the individual option key
+                  className="w-6 h-6"
+                  onChange={handleChange}
+                  checked={size.includes(option.key)} // Check if the option is selected
+                />
+              </div>
+            ))}
+          </div>
         </div>
         <div className="flex flex-col gap-2">
           <label htmlFor="category">Category</label>

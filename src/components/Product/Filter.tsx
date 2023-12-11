@@ -49,7 +49,7 @@ const Filter = (props: Props) => {
         >
            <option value="" >All Products</option>
           {navCategories.map((category: any) => (
-            <option value={category.name} key={category._id}>
+            <option value={category.name} key={category.id}>
               {category.title}
             </option>
           ))}

@@ -3,7 +3,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import SubNav from "../SubNav";
 import { navCategories } from "../NavCategories";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory } from "../../../store/slices/ApiSlice";
+import { setCategory, setDetailedSubCategory, setSubcategory } from "../../../store/slices/ApiSlice";
 import { setCallback } from "../../../store/slices/CallbackSlice";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const NavCategories = (props: Props) => {
   const [openCategory, setOpenCategory] = useState<string>("");
   const navigate = useNavigate();
   const callback = useSelector((state: any) => state.callback.callback);
-  const dipatch = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
     if (openSubNav) {
       document.body.style.overflow = "hidden";
@@ -28,8 +28,10 @@ const NavCategories = (props: Props) => {
   }, [openSubNav]);
 
   function handleCategoryActions(category: any) {
-    dipatch(setCategory(encodeURIComponent(category.title)));
-    dipatch(setCallback(!callback as any));
+    dispatch(setCategory(encodeURIComponent(category.title)));
+    dispatch(setSubcategory(""))
+    dispatch(setDetailedSubCategory(""))
+    dispatch(setCallback(!callback as any));
     setOpenSubNav(false);
     navigate("/");
   }
@@ -60,10 +62,7 @@ const NavCategories = (props: Props) => {
               setOpenSubNav(false);
             }}
             onClick={() => handleCategoryActions(category)}
-            className={`cursor-pointer flex items-center h-full px-3 ${
-              activeTab === category.title ? "bg-gray-200" : ""
-            } duration-300`}
-          >
+            className={`cursor-pointer flex items-center h-full px-3 ${activeTab === category.title ? "bg-gray-200" : ""} duration-300`}>
             {category.title}
           </div>
         </React.Fragment>
