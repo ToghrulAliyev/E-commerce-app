@@ -146,7 +146,7 @@ const ProductCard = ({
               <p className=" text-sm ">{product.description}</p>
             </div>
             <div className="flex justify-between mt-4 items-center">
-              <span className="py-2 block text-xl text-red-500">${product.price} </span>
+              <span className="py-2 block text-xl font-bold text-[#fa6338]">${product.price} </span>
 
               <button
                 onClick={() => addToCart(product, isLogged, basket, token)}

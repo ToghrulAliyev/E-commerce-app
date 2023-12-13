@@ -74,8 +74,8 @@ export const navCategories = [
             { detailedSubId: 4, image: "/images/women/subcategory/dress/bodycon.png", title: "Bodycon Dresses" },
             { detailedSubId: 5, image: "/images/women/subcategory/dress/boho.png", title: "Boho Dresses" },
             { detailedSubId: 6, image: "/images/women/subcategory/dress/elegant.png", title: "Elegant Dresses" },
-            { detailedSubId: 7, image: "/images/women/subcategory/dress/black.png", title: "Black Dresses" },
-            { detailedSubId: 8, image: "/images/women/subcategory/dress/white.png", title: "White Dresses" },
+            // { detailedSubId: 7, image: "/images/women/subcategory/dress/black.png", title: "Black Dresses" },
+            // { detailedSubId: 8, image: "/images/women/subcategory/dress/white.png", title: "White Dresses" },
           ],
         },
         {

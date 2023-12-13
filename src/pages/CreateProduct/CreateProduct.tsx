@@ -59,14 +59,16 @@ const CreateProduct = (props: Props) => {
   const callback = useSelector((state: any) => state.callback.callback);
   const [onEdit, setOnEdit] = useState(false);
 
-  console.log("images123123", images);
   useEffect(() => {
     if (params.id) {
       setOnEdit(true);
-      allProducts.forEach((product: any) => {
+      allProducts?.forEach((product: any) => {
         if (product._id === params.id) {
+          console.log("product",product)
           setCurrentProducts(product);
           setImages(product.images);
+          setColor(product.color)
+          setSize(product.size)
         }
       });
     } else {
@@ -125,7 +127,6 @@ const CreateProduct = (props: Props) => {
     setCurrentProducts({ ...currentProducts, [name]: value });
   };
 
-  console.log("selected", size);
   const handleChange = (event: any) => {
     const optionValue = event.target.value;
     const newSelectedOptions = size.includes(optionValue)
@@ -147,6 +148,13 @@ const CreateProduct = (props: Props) => {
       setColorName("");
     }
   };
+
+ 
+
+  const handleRemoveColor = (currentColor:string)=>{
+    const updatedColors = color.filter((current:any)=> current.color !== currentColor)
+    setColor(updatedColors)
+  }
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -187,6 +195,7 @@ const CreateProduct = (props: Props) => {
   }, []);
   return (
     <div className="flex w-full justify-between p-4 mt-12">
+      
       <div className="flex flex-col w-1/2">
         <div
           className={`max-w-[450px] h-[500px] w-full hover:opacity-80 duration-300 border ${
@@ -201,6 +210,7 @@ const CreateProduct = (props: Props) => {
               onChange={handleUpload}
               type="file"
               name="file"
+              required
               id="file_up"
               className="w-full h-full absolute outline-none opacity-0 cursor-pointer top-0 z-50"
             />
@@ -246,7 +256,7 @@ const CreateProduct = (props: Props) => {
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-1/2 px-4">
         <div className="flex flex-col gap-2">
-          <label htmlFor="product_id">Product Id</label>
+          <label htmlFor="product_id">Product Id {allProducts?.length}</label>
           <input
             type="text"
             name="product_id"
@@ -340,15 +350,18 @@ const CreateProduct = (props: Props) => {
             <h4>Selected Colors:</h4>
             <ul>
               {color.map((color: any, index: any) => {
-                console.log("colorLlll", color);
                 return (
-                  <li
-                    className={`p-2 m-1 text-black`}
-                    style={{ backgroundColor: color }}
-                    key={index}
+                  <div className="flex items-center" key={index}>
+                    <li
+                    className="p-2 m-1 text-black w-full"
+                    style={{ backgroundColor: color.color }}
                   >
                    {`${color.colorName}: ${color.color}`} {/* Display both color name and value */}
                   </li>
+                  <button onClick={()=>handleRemoveColor(color.color)} type="button" className="bg-red-500 py-1 text-white">
+                    <AiOutlineClose className="w-10 h-7" />
+                  </button>
+                  </div>
                 );
               })}
             </ul>
@@ -381,6 +394,7 @@ const CreateProduct = (props: Props) => {
             value={currentProducts.category}
             className="border rounded py-2 pl-2"
             onChange={handleChangeInput}
+            required
           >
             <option value="">Please select a category</option>
             {navCategories.map((category) => (
@@ -399,6 +413,7 @@ const CreateProduct = (props: Props) => {
               value={currentProducts.subcategory}
               className="border rounded py-2 pl-2"
               onChange={handleChangeInput}
+              required
             >
               <option value="">Select a subcategory</option>
               {navCategories
@@ -420,6 +435,7 @@ const CreateProduct = (props: Props) => {
               value={currentProducts.detailedSubCategory}
               className="border rounded py-2 pl-2"
               onChange={handleChangeInput}
+              required
             >
               <option value="">Select Detailed Subcategory</option>
               {navCategories

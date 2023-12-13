@@ -126,7 +126,7 @@ export const getProducts = createAsyncThunk(
       state.products;
 
     const searchParams = new URLSearchParams();
-    searchParams.append("limit", String(page * 11));
+    searchParams.append("limit", String(page * 15));
     searchParams.append("sort", sort);
     searchParams.append("title[regex]", search);
 
