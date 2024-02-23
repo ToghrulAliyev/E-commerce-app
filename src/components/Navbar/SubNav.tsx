@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 import { GoChevronRight } from "react-icons/go";
 import { TbCategory } from "react-icons/tb";
 import { navCategories } from "./NavCategories";
-import { setSubcategory } from "../../store/slices/ApiSlice";
+import { setCategory, setSubcategory } from "../../store/slices/ApiSlice";
 import { setCallback } from "../../store/slices/CallbackSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -39,8 +39,8 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
   },[womenClothingSubcategory])
 
 
-  function handleSubCategoryActions(subcategory: any) {
-    console.log("succbcbc",subcategory)
+  function handleSubCategoryActions(category:any,subcategory: any) {
+    dispatch(setCategory(encodeURIComponent(category)));
     dispatch(setSubcategory(encodeURIComponent(subcategory)));
     dispatch(setCallback(!callback as any));
     setOpenSubNav(false);
@@ -82,8 +82,9 @@ const SubNav: FC<Props> = ({ openSubNav, setOpenSubNav, activeTab, setActiveTab,
           </div>
           <div className="category-scrollbar flex flex-wrap overflow-y-auto">
             {womenClothingSubcategory?.subCategory?.map((subcategory: any) => {
+              console.log('womenClothingSubcategory',womenClothingSubcategory.title)
               return (
-                <div onClick={()=> handleSubCategoryActions(subcategory.title)} key={subcategory.title} className="flex flex-col flex-[0_0_33%] mb-3 items-center cursor-pointer ">
+                <div onClick={()=> handleSubCategoryActions(womenClothingSubcategory.title,subcategory.title)} key={subcategory.title} className="flex flex-col flex-[0_0_33%] mb-3 items-center cursor-pointer ">
                   <div  className="w-[82px] h-[82px] rounded-full bg-gray-300 overflow-hidden hover:shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:scale-105 duration-300 mb-1">
                     <img
                       className="w-full h-full bg-cover"

@@ -65,98 +65,249 @@ export const navCategories = [
       },
     ],
     detailedSubCategory: [
-        {
-          subCategoryTitle: "DRESSES",
-          categoryDetails: [
-            { detailedSubId: 1, image: "/images/women/subcategory/dress/maxi.png", title: "Maxi Dresses" },
-            { detailedSubId: 2, image: "/images/women/subcategory/dress/midi.png", title: "Midi Dresses" },
-            { detailedSubId: 3, image: "/images/women/subcategory/dress/prom.png", title: "Prom Dresses" },
-            { detailedSubId: 4, image: "/images/women/subcategory/dress/bodycon.png", title: "Bodycon Dresses" },
-            { detailedSubId: 5, image: "/images/women/subcategory/dress/boho.png", title: "Boho Dresses" },
-            { detailedSubId: 6, image: "/images/women/subcategory/dress/elegant.png", title: "Elegant Dresses" },
-            // { detailedSubId: 7, image: "/images/women/subcategory/dress/black.png", title: "Black Dresses" },
-            // { detailedSubId: 8, image: "/images/women/subcategory/dress/white.png", title: "White Dresses" },
-          ],
-        },
-        {
-          subCategoryTitle: "BOTTOMS",
-          categoryDetails: [
-            { detailedSubId: 9, image: "/images/women/subcategory/bottoms/pants.png", title: "Pants" },
-            { detailedSubId: 10, image: "/images/women/subcategory/bottoms/skirt.png", title: "Skirts" },
-            { detailedSubId: 11, image: "/images/women/subcategory/bottoms/jeans.png", title: "Jeans" },
-            { detailedSubId: 12, image: "/images/women/subcategory/bottoms/sweetpant.png", title: "Sweatpants" },
-          ],
-        },
-        {
-          subCategoryTitle: "DENIM",
-          categoryDetails: [
-            { detailedSubId: 13, image: "/images/women/subcategory/denim/jacket.png", title: "Denim Jackets & Coats" },
-            { detailedSubId: 14, image: "/images/women/subcategory/denim/overall.png", title: "Denim Overalls & Jumpsuits" },
-            { detailedSubId: 15, image: "/images/women/subcategory/denim/dress.png", title: "Denim Dresses" },
-            { detailedSubId: 16, image: "/images/women/subcategory/denim/twoPiece.png", title: "Denim Two-Piece Outfits" },
-          ],
-        },
-        {
-          subCategoryTitle: "SWEATERS",
-          categoryDetails: [
-            
-            { detailedSubId: 17, image: "/images/women/subcategory/sweater/cardigans.png", title: "Cardigans" },
-            { detailedSubId: 18, image: "/images/women/subcategory/sweater/sweater.png", title: "Sweaters" },
-            { detailedSubId: 19, image: "/images/women/subcategory/sweater/sweDress.png", title: "Sweater Dresses" },
-            { detailedSubId: 20, image: "/images/women/subcategory/sweater/vest.png", title: "Sweater Vests" },
-            { detailedSubId: 21, image: "/images/women/subcategory/sweater/coords.png", title: "Sweater Co-ords" },
-            { detailedSubId: 22, image: "/images/women/subcategory/sweater/sweSkirt.png", title: "Sweater Skirts" },
-            { detailedSubId: 23, image: "/images/women/subcategory/sweater/swePant.png", title: "Sweater Pants" },
-          ],
-        },
-        {
-          subCategoryTitle: "HOODIES & SWEATSHIRTS",
-          categoryDetails: [
-            { detailedSubId: 24, image: "/images/women/subcategory/hoodie/hoodie.png", title: "Hoodies" },
-            { detailedSubId: 25, image: "/images/women/subcategory/hoodie/sweatshirt.png", title: "Sweatshirts" },
-          ],
-        },
-        {
-          subCategoryTitle: "SUITS",
-          categoryDetails: [
-            { detailedSubId: 26, image: "/images/women/subcategory/suits/blazzer.png", title: "Blazers" },
-            { detailedSubId: 27, image: "/images/women/subcategory/suits/suitSet.png", title: "Suit sets" },
-            { detailedSubId: 28, image: "/images/women/subcategory/suits/suitPant.png", title: "Suit pants" },
-          ],
-        },
-        {
-          subCategoryTitle: "CO-ORDS",
-          categoryDetails: [
-            { detailedSubId: 29, image: "/images/women/subcategory/coords/swetSet.png", title: "Sweatshirts Sets" },
-            { detailedSubId: 30, image: "/images/women/subcategory/coords/pantSet.png", title: "Pants Sets" },
-            { detailedSubId: 31, image: "/images/women/subcategory/coords/plain.png", title: "Plain Co-ords" },
-            { detailedSubId: 32, image: "/images/women/subcategory/coords/two-piece-outfit.png", title: "Two-piece Outfits" },
-          ],
-        },
-        {
-          subCategoryTitle: "JACKETS & COATS",
-          categoryDetails: [
-            { detailedSubId: 33, image: "/images/women/subcategory/coats/jackets.png", title: "Jackets" },
-            { detailedSubId: 34, image: "/images/women/subcategory/coats/coats.png", title: "Coats" },
-            { detailedSubId: 35, image: "/images/women/subcategory/coats/winter-coats.png", title: "Winter Coats" },
-            { detailedSubId: 36, image: "/images/women/subcategory/coats/overcoats.png", title: "Overcoats" },
-            { detailedSubId: 37, image: "/images/women/subcategory/coats/trench-coats.png", title: "Trench Coats" },
-          ],
-        },
-        {
-          subCategoryTitle: "PARTY WEAR",
-          categoryDetails: [
-            { detailedSubId: 38, image: "/images/women/subcategory/party/prom.png", title: "Prom & Evening Dresses" },
-            { detailedSubId: 39, image: "/images/women/subcategory/party/cocktail.png", title: "Cocktail Dresses" },
-            { detailedSubId: 40, image: "/images/women/subcategory/party/party.png", title: "Party Jumpsuits" },
-          ],
-        },
-      ],
-    },
+      {
+        subCategoryTitle: "DRESSES",
+        categoryDetails: [
+          {
+            detailedSubId: 1,
+            image: "/images/women/subcategory/dress/maxi.png",
+            title: "Maxi Dresses",
+          },
+          {
+            detailedSubId: 2,
+            image: "/images/women/subcategory/dress/midi.png",
+            title: "Midi Dresses",
+          },
+          {
+            detailedSubId: 3,
+            image: "/images/women/subcategory/dress/prom.png",
+            title: "Prom Dresses",
+          },
+          {
+            detailedSubId: 4,
+            image: "/images/women/subcategory/dress/bodycon.png",
+            title: "Bodycon Dresses",
+          },
+          {
+            detailedSubId: 5,
+            image: "/images/women/subcategory/dress/boho.png",
+            title: "Boho Dresses",
+          },
+          {
+            detailedSubId: 6,
+            image: "/images/women/subcategory/dress/elegant.png",
+            title: "Elegant Dresses",
+          },
+          // { detailedSubId: 7, image: "/images/women/subcategory/dress/black.png", title: "Black Dresses" },
+          // { detailedSubId: 8, image: "/images/women/subcategory/dress/white.png", title: "White Dresses" },
+        ],
+      },
+      {
+        subCategoryTitle: "BOTTOMS",
+        categoryDetails: [
+          {
+            detailedSubId: 9,
+            image: "/images/women/subcategory/bottoms/pants.png",
+            title: "Pants",
+          },
+          {
+            detailedSubId: 10,
+            image: "/images/women/subcategory/bottoms/skirt.png",
+            title: "Skirts",
+          },
+          {
+            detailedSubId: 11,
+            image: "/images/women/subcategory/bottoms/jeans.png",
+            title: "Jeans",
+          },
+          {
+            detailedSubId: 12,
+            image: "/images/women/subcategory/bottoms/sweetpant.png",
+            title: "Sweatpants",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "DENIM",
+        categoryDetails: [
+          {
+            detailedSubId: 13,
+            image: "/images/women/subcategory/denim/jacket.png",
+            title: "Denim Jackets & Coats",
+          },
+          {
+            detailedSubId: 14,
+            image: "/images/women/subcategory/denim/overall.png",
+            title: "Denim Overalls & Jumpsuits",
+          },
+          {
+            detailedSubId: 15,
+            image: "/images/women/subcategory/denim/dress.png",
+            title: "Denim Dresses",
+          },
+          {
+            detailedSubId: 16,
+            image: "/images/women/subcategory/denim/twoPiece.png",
+            title: "Denim Two-Piece Outfits",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "SWEATERS",
+        categoryDetails: [
+          {
+            detailedSubId: 17,
+            image: "/images/women/subcategory/sweater/cardigans.png",
+            title: "Cardigans",
+          },
+          {
+            detailedSubId: 18,
+            image: "/images/women/subcategory/sweater/sweater.png",
+            title: "Sweaters",
+          },
+          {
+            detailedSubId: 19,
+            image: "/images/women/subcategory/sweater/sweDress.png",
+            title: "Sweater Dresses",
+          },
+          {
+            detailedSubId: 20,
+            image: "/images/women/subcategory/sweater/vest.png",
+            title: "Sweater Vests",
+          },
+          {
+            detailedSubId: 21,
+            image: "/images/women/subcategory/sweater/coords.png",
+            title: "Sweater Co-ords",
+          },
+          {
+            detailedSubId: 22,
+            image: "/images/women/subcategory/sweater/sweSkirt.png",
+            title: "Sweater Skirts",
+          },
+          {
+            detailedSubId: 23,
+            image: "/images/women/subcategory/sweater/swePant.png",
+            title: "Sweater Pants",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "HOODIES & SWEATSHIRTS",
+        categoryDetails: [
+          {
+            detailedSubId: 24,
+            image: "/images/women/subcategory/hoodie/hoodie.png",
+            title: "Hoodies",
+          },
+          {
+            detailedSubId: 25,
+            image: "/images/women/subcategory/hoodie/sweatshirt.png",
+            title: "Sweatshirts",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "SUITS",
+        categoryDetails: [
+          {
+            detailedSubId: 26,
+            image: "/images/women/subcategory/suits/blazzer.png",
+            title: "Blazers",
+          },
+          {
+            detailedSubId: 27,
+            image: "/images/women/subcategory/suits/suitSet.png",
+            title: "Suit sets",
+          },
+          {
+            detailedSubId: 28,
+            image: "/images/women/subcategory/suits/suitPant.png",
+            title: "Suit pants",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "CO-ORDS",
+        categoryDetails: [
+          {
+            detailedSubId: 29,
+            image: "/images/women/subcategory/coords/swetSet.png",
+            title: "Sweatshirts Sets",
+          },
+          {
+            detailedSubId: 30,
+            image: "/images/women/subcategory/coords/pantSet.png",
+            title: "Pants Sets",
+          },
+          {
+            detailedSubId: 31,
+            image: "/images/women/subcategory/coords/plain.png",
+            title: "Plain Co-ords",
+          },
+          {
+            detailedSubId: 32,
+            image: "/images/women/subcategory/coords/two-piece-outfit.png",
+            title: "Two-piece Outfits",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "JACKETS & COATS",
+        categoryDetails: [
+          {
+            detailedSubId: 33,
+            image: "/images/women/subcategory/coats/jackets.png",
+            title: "Jackets",
+          },
+          {
+            detailedSubId: 34,
+            image: "/images/women/subcategory/coats/coats.png",
+            title: "Coats",
+          },
+          {
+            detailedSubId: 35,
+            image: "/images/women/subcategory/coats/winter-coats.png",
+            title: "Winter Coats",
+          },
+          {
+            detailedSubId: 36,
+            image: "/images/women/subcategory/coats/overcoats.png",
+            title: "Overcoats",
+          },
+          {
+            detailedSubId: 37,
+            image: "/images/women/subcategory/coats/trench-coats.png",
+            title: "Trench Coats",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "PARTY WEAR",
+        categoryDetails: [
+          {
+            detailedSubId: 38,
+            image: "/images/women/subcategory/party/prom.png",
+            title: "Prom & Evening Dresses",
+          },
+          {
+            detailedSubId: 39,
+            image: "/images/women/subcategory/party/cocktail.png",
+            title: "Cocktail Dresses",
+          },
+          {
+            detailedSubId: 40,
+            image: "/images/women/subcategory/party/party.png",
+            title: "Party Jumpsuits",
+          },
+        ],
+      },
+    ],
+  },
   {
     id: 2,
     title: "Men Fashion",
-    subCategory:[
+    subCategory: [
       {
         subId: 13,
         image: "/images/men/categories/bottoms.png",
@@ -187,12 +338,12 @@ export const navCategories = [
         image: "/images/men/categories/sweater.png",
         title: "Sweaters",
       },
-       
-      {
-        subId: 19,
-        image: "/images/men/categories/plusSize.png",
-        title: "Plus size",
-      },
+
+      // {
+      //   subId: 19,
+      //   image: "/images/men/categories/plusSize.png",
+      //   title: "Plus size",
+      // },
       {
         subId: 20,
         image: "/images/men/categories/shoe.png",
@@ -209,101 +360,256 @@ export const navCategories = [
       //   title: "Activewear",
       // },
     ],
-    detailedSubCategory:[
+    detailedSubCategory: [
       {
         subCategoryTitle: "BOTTOMS",
         categoryDetails: [
-          { detailedSubId: 41, image: "/images/men/subcategory/bottoms/shorts.png", title: "Shorts" },
-          { detailedSubId: 42, image: "/images/men/subcategory/bottoms/pants.png", title: "Pants" },
-          { detailedSubId: 43, image: "/images/men/subcategory/bottoms/sweatpants.png", title: "Sweatpants" },
+          {
+            detailedSubId: 41,
+            image: "/images/men/subcategory/bottoms/shorts.png",
+            title: "Shorts",
+          },
+          {
+            detailedSubId: 42,
+            image: "/images/men/subcategory/bottoms/pants.png",
+            title: "Pants",
+          },
+          {
+            detailedSubId: 43,
+            image: "/images/men/subcategory/bottoms/sweatpants.png",
+            title: "Sweatpants",
+          },
         ],
       },
       {
         subCategoryTitle: "HOODIES & SWEATSHIRTS",
         categoryDetails: [
-          { detailedSubId: 44, image: "/images/men/subcategory/hoodie/hoodie.png", title: "Hoodies" },
-          { detailedSubId: 45, image: "/images/men/subcategory/hoodie/sweatshirts.png", title: "Sweatshirts" },
-          { detailedSubId: 46, image: "/images/men/subcategory/hoodie/zipup.png", title: "Zip Up" },
+          {
+            detailedSubId: 44,
+            image: "/images/men/subcategory/hoodie/hoodie.png",
+            title: "Hoodies",
+          },
+          {
+            detailedSubId: 45,
+            image: "/images/men/subcategory/hoodie/sweatshirts.png",
+            title: "Sweatshirts",
+          },
+          {
+            detailedSubId: 46,
+            image: "/images/men/subcategory/hoodie/zipup.png",
+            title: "Zip Up",
+          },
         ],
       },
       {
         subCategoryTitle: "CO-ORDS",
         categoryDetails: [
-          { detailedSubId: 47, image: "/images/men/subcategory/coords/sweatshirt.png", title: "Sweatshirts" },
-          { detailedSubId: 48, image: "/images/men/subcategory/coords/jacket.png", title: "Jackets" },
-          { detailedSubId: 49, image: "/images/men/subcategory/coords/tees.png", title: "Tees" },
-          { detailedSubId: 50, image: "/images/men/subcategory/coords/shirts.png", title: "Shirts" },
-          { detailedSubId: 51, image: "/images/men/subcategory/coords/tanks.png", title: "Tanks" },
+          {
+            detailedSubId: 47,
+            image: "/images/men/subcategory/coords/sweatshirt.png",
+            title: "Sweatshirts",
+          },
+          {
+            detailedSubId: 48,
+            image: "/images/men/subcategory/coords/jacket.png",
+            title: "Jackets",
+          },
+          {
+            detailedSubId: 49,
+            image: "/images/men/subcategory/coords/tees.png",
+            title: "Tees",
+          },
+          {
+            detailedSubId: 50,
+            image: "/images/men/subcategory/coords/shirts.png",
+            title: "Shirts",
+          },
+          {
+            detailedSubId: 51,
+            image: "/images/men/subcategory/coords/tanks.png",
+            title: "Tanks",
+          },
         ],
       },
       {
         subCategoryTitle: "OUTERWEAR",
         categoryDetails: [
-          { detailedSubId: 52, image: "/images/men/subcategory/outerwear/jackets.png", title: "Jackets & coats" },
-          { detailedSubId: 53, image: "/images/men/subcategory/outerwear/overcoat.png", title: "Overcoats" },
-          { detailedSubId: 54, image: "/images/men/subcategory/outerwear/winterCoat.png", title: "Winter coats" },
-          { detailedSubId: 55, image: "/images/men/subcategory/outerwear/trenchCoat.png", title: "Trench coats" },
-          { detailedSubId: 56, image: "/images/men/subcategory/outerwear/downcoat.png", title: "Down coats" },
-          { detailedSubId: 57, image: "/images/men/subcategory/outerwear/shacket.png", title: "Shackets" },
+          {
+            detailedSubId: 52,
+            image: "/images/men/subcategory/outerwear/jackets.png",
+            title: "Jackets & coats",
+          },
+          {
+            detailedSubId: 53,
+            image: "/images/men/subcategory/outerwear/overcoat.png",
+            title: "Overcoats",
+          },
+          {
+            detailedSubId: 54,
+            image: "/images/men/subcategory/outerwear/winterCoat.png",
+            title: "Winter coats",
+          },
+          {
+            detailedSubId: 55,
+            image: "/images/men/subcategory/outerwear/trenchCoat.png",
+            title: "Trench coats",
+          },
+          {
+            detailedSubId: 56,
+            image: "/images/men/subcategory/outerwear/downcoat.png",
+            title: "Down coats",
+          },
+          {
+            detailedSubId: 57,
+            image: "/images/men/subcategory/outerwear/shacket.png",
+            title: "Shackets",
+          },
         ],
       },
       {
         subCategoryTitle: "DENIM",
         categoryDetails: [
-          { detailedSubId: 58, image: "/images/men/subcategory/denim/jeans.png", title: "Jeans" },
-          { detailedSubId: 59, image: "/images/men/subcategory/denim/denimShorts.png", title: "Denim shorts" },
-          { detailedSubId: 60, image: "/images/men/subcategory/denim/denimJacket.png", title: "Denim jackets" },
-          { detailedSubId: 61, image: "/images/men/subcategory/denim/denimShirt.png", title: "Denim shirts" },
+          {
+            detailedSubId: 58,
+            image: "/images/men/subcategory/denim/jeans.png",
+            title: "Jeans",
+          },
+          {
+            detailedSubId: 59,
+            image: "/images/men/subcategory/denim/denimShorts.png",
+            title: "Denim shorts",
+          },
+          {
+            detailedSubId: 60,
+            image: "/images/men/subcategory/denim/denimJacket.png",
+            title: "Denim jackets",
+          },
+          {
+            detailedSubId: 61,
+            image: "/images/men/subcategory/denim/denimShirt.png",
+            title: "Denim shirts",
+          },
         ],
       },
       {
         subCategoryTitle: "SWEATERS",
         categoryDetails: [
-          { detailedSubId: 62, image: "/images/men/subcategory/sweater/pullover.png", title: "Pullovers" },
-          { detailedSubId: 63, image: "/images/men/subcategory/sweater/sweatervest.png", title: "Sweater vests" },
-          { detailedSubId: 64, image: "/images/men/subcategory/sweater/cardigans.png", title: "Cardigans" },
+          {
+            detailedSubId: 62,
+            image: "/images/men/subcategory/sweater/pullover.png",
+            title: "Pullovers",
+          },
+          {
+            detailedSubId: 63,
+            image: "/images/men/subcategory/sweater/sweatervest.png",
+            title: "Sweater vests",
+          },
+          {
+            detailedSubId: 64,
+            image: "/images/men/subcategory/sweater/cardigans.png",
+            title: "Cardigans",
+          },
         ],
       },
-      {
-        subCategoryTitle: "PLUS SIZE",
-        categoryDetails: [
-          { detailedSubId: 65, image: "/images/men/subcategory/plus/bottoms.png", title: "Bottoms" },
-          { detailedSubId: 66, image: "/images/men/subcategory/plus/coords.png", title: "Co-ords" },
-          { detailedSubId: 67, image: "/images/men/subcategory/plus/denim.png", title: "Denim" },
-          { detailedSubId: 68, image: "/images/men/subcategory/plus/suits.png", title: "Suits & separates" },
-          { detailedSubId: 69, image: "/images/men/subcategory/plus/knitwear.png", title: "Knitwear" },
-          { detailedSubId: 70, image: "/images/men/subcategory/plus/hoodie.png", title: "Hoodies & sweatshirts" },
-          { detailedSubId: 71, image: "/images/men/subcategory/plus/outerwear.png", title: "Outerwear" },
-        ],
-      },
+      // {
+      //   subCategoryTitle: "PLUS SIZE",
+      //   categoryDetails: [
+      //     { detailedSubId: 65, image: "/images/men/subcategory/plus/bottoms.png", title: "Bottoms" },
+      //     { detailedSubId: 66, image: "/images/men/subcategory/plus/coords.png", title: "Co-ords" },
+      //     { detailedSubId: 67, image: "/images/men/subcategory/plus/denim.png", title: "Denim" },
+      //     { detailedSubId: 68, image: "/images/men/subcategory/plus/suits.png", title: "Suits & separates" },
+      //     { detailedSubId: 69, image: "/images/men/subcategory/plus/knitwear.png", title: "Knitwear" },
+      //     { detailedSubId: 70, image: "/images/men/subcategory/plus/hoodie.png", title: "Hoodies & sweatshirts" },
+      //     { detailedSubId: 71, image: "/images/men/subcategory/plus/outerwear.png", title: "Outerwear" },
+      //   ],
+      // },
       {
         subCategoryTitle: "SHOES",
         categoryDetails: [
-          { detailedSubId: 72, image: "/images/men/subcategory/shoe/sneakers.png", title: "Sneakers" },
-          { detailedSubId: 73, image: "/images/men/subcategory/shoe/flipFlop.png", title: "Flip flops & slides" },
-          { detailedSubId: 74, image: "/images/men/subcategory/shoe/loafer.png", title: "Loafers" },
-          { detailedSubId: 75, image: "/images/men/subcategory/shoe/dressShoe.png", title: "Dress shoes" },
-          { detailedSubId: 76, image: "/images/men/subcategory/shoe/boots.png", title: "Boots" },
-          { detailedSubId: 77, image: "/images/men/subcategory/shoe/clogs.png", title: "Clogs" },
-          { detailedSubId: 78, image: "/images/men/subcategory/shoe/sandals.png", title: "Sandals" },
-          { detailedSubId: 79, image: "/images/men/subcategory/shoe/slippers.png", title: "Slippers" },
-          { detailedSubId: 80, image: "/images/men/subcategory/shoe/work.png", title: "Work & safety shoes" },
-          { detailedSubId: 81, image: "/images/men/subcategory/shoe/athletic.png", title: "Athletic shoes" },
-          { detailedSubId: 82, image: "/images/men/subcategory/shoe/outdoor.png", title: "Outdoor shoes" },
-          
+          {
+            detailedSubId: 72,
+            image: "/images/men/subcategory/shoe/sneakers.png",
+            title: "Sneakers",
+          },
+          {
+            detailedSubId: 73,
+            image: "/images/men/subcategory/shoe/flipFlop.png",
+            title: "Flip flops & slides",
+          },
+          {
+            detailedSubId: 74,
+            image: "/images/men/subcategory/shoe/loafer.png",
+            title: "Loafers",
+          },
+          {
+            detailedSubId: 75,
+            image: "/images/men/subcategory/shoe/dressShoe.png",
+            title: "Dress shoes",
+          },
+          {
+            detailedSubId: 76,
+            image: "/images/men/subcategory/shoe/boots.png",
+            title: "Boots",
+          },
+          {
+            detailedSubId: 77,
+            image: "/images/men/subcategory/shoe/clogs.png",
+            title: "Clogs",
+          },
+          {
+            detailedSubId: 78,
+            image: "/images/men/subcategory/shoe/sandals.png",
+            title: "Sandals",
+          },
+          {
+            detailedSubId: 79,
+            image: "/images/men/subcategory/shoe/slippers.png",
+            title: "Slippers",
+          },
+          {
+            detailedSubId: 80,
+            image: "/images/men/subcategory/shoe/work.png",
+            title: "Work & safety shoes",
+          },
+          {
+            detailedSubId: 81,
+            image: "/images/men/subcategory/shoe/athletic.png",
+            title: "Athletic shoes",
+          },
+          // { detailedSubId: 82, image: "/images/men/subcategory/shoe/outdoor.png", title: "Outdoor shoes" },
         ],
       },
       {
         subCategoryTitle: "ACCESSORIES",
         categoryDetails: [
-          { detailedSubId: 83, image: "/images/men/subcategory/accessories/hat.png", title: "Hats & gloves" },
-          { detailedSubId: 84, image: "/images/men/subcategory/accessories/glasses.png", title: "Glasses & Accs" },
-          { detailedSubId: 85, image: "/images/men/subcategory/accessories/belt.png", title: "Belts & suspenders" },
-          { detailedSubId: 86, image: "/images/men/subcategory/accessories/scarves.png", title: "Scarves" },
-          { detailedSubId: 87, image: "/images/men/subcategory/accessories/cases.png", title: "Cigarette cases" },
+          {
+            detailedSubId: 83,
+            image: "/images/men/subcategory/accessories/hat.png",
+            title: "Hats & gloves",
+          },
+          {
+            detailedSubId: 84,
+            image: "/images/men/subcategory/accessories/glasses.png",
+            title: "Glasses & Accs",
+          },
+          {
+            detailedSubId: 85,
+            image: "/images/men/subcategory/accessories/belt.png",
+            title: "Belts & suspenders",
+          },
+          {
+            detailedSubId: 86,
+            image: "/images/men/subcategory/accessories/scarves.png",
+            title: "Scarves",
+          },
+          {
+            detailedSubId: 87,
+            image: "/images/men/subcategory/accessories/cases.png",
+            title: "Cigarette cases",
+          },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     id: 3,
@@ -324,11 +630,11 @@ export const navCategories = [
         image: "/images/womenJew/categories/hat.png",
         title: "Hats",
       },
-      {
-        subId: 26,
-        image: "/images/womenJew/categories/fashionJew.png",
-        title: "Fashion jewelry",
-      },
+      // {
+      //   subId: 26,
+      //   image: "/images/womenJew/categories/fashionJew.png",
+      //   title: "Fashion jewelry",
+      // },
       {
         subId: 27,
         image: "/images/womenJew/categories/fineJew.png",
@@ -355,37 +661,37 @@ export const navCategories = [
         title: "Jewelry packaging",
       },
     ],
-    detailedSubCategory:[
-      {
-        subCategoryTitle: "FASHION JEWELRY",
-        categoryDetails: [
-          {
-            detailedSubId: 88,
-            image: "/images/womenJew/subcategory/fashionJew/bracelet.png",
-            title: "Bracelets",
-          },
-          {
-            detailedSubId: 89,
-            image: "/images/womenJew/subcategory/fashionJew/earrings.png",
-            title: "Earrings",
-          },
-          {
-            detailedSubId: 90,
-            image: "/images/womenJew/subcategory/fashionJew/jewSet.png",
-            title: "Jewelry sets",
-          },
-          {
-            detailedSubId: 91,
-            image: "/images/womenJew/subcategory/fashionJew/necklaces.png",
-            title: "Necklaces",
-          },
-          {
-            detailedSubId: 92,
-            image: "/images/womenJew/subcategory/fashionJew/rings.png",
-            title: "Rings",
-          },
-        ],
-      },
+    detailedSubCategory: [
+      // {
+      //   subCategoryTitle: "FASHION JEWELRY",
+      //   categoryDetails: [
+      //     {
+      //       detailedSubId: 88,
+      //       image: "/images/womenJew/subcategory/fashionJew/bracelet.png",
+      //       title: "Bracelets",
+      //     },
+      //     {
+      //       detailedSubId: 89,
+      //       image: "/images/womenJew/subcategory/fashionJew/earrings.png",
+      //       title: "Earrings",
+      //     },
+      //     {
+      //       detailedSubId: 90,
+      //       image: "/images/womenJew/subcategory/fashionJew/jewSet.png",
+      //       title: "Jewelry sets",
+      //     },
+      //     {
+      //       detailedSubId: 91,
+      //       image: "/images/womenJew/subcategory/fashionJew/necklaces.png",
+      //       title: "Necklaces",
+      //     },
+      //     {
+      //       detailedSubId: 92,
+      //       image: "/images/womenJew/subcategory/fashionJew/rings.png",
+      //       title: "Rings",
+      //     },
+      //   ],
+      // },
       {
         subCategoryTitle: "HAIR ACCESSORIES",
         categoryDetails: [
@@ -472,7 +778,32 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "WATCHES & ACCS",
+        subCategoryTitle: "FINE JEWELRY",
+        categoryDetails: [
+          {
+            detailedSubId: 112,
+            image: "/images/womenJew/subcategory/fineJew/fine_bracelets.png",
+            title: "Fine bracelets",
+          },
+          {
+            detailedSubId: 113,
+            image: "/images/womenJew/subcategory/fineJew/fine_earrings.png",
+            title: "Fine earrings",
+          },
+          {
+            detailedSubId: 114,
+            image: "/images/womenJew/subcategory/fineJew/fine_necklaces.png",
+            title: "Fine necklaces",
+          },
+          {
+            detailedSubId: 115,
+            image: "/images/womenJew/subcategory/fineJew/fine_rings.png",
+            title: "Fine rings",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "WATCHES",
         categoryDetails: [
           {
             detailedSubId: 107,
@@ -502,46 +833,21 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "FINE JEWELRY",
+        subCategoryTitle: "JEWELRY PACKAGING",
         categoryDetails: [
           {
-            detailedSubId: 112,
-            image: "/images/womenJew/subcategory/fineJew/fine_bracelets.png",
-            title: "Fine bracelets",
+            detailedSubId: 116,
+            image: "/images/womenJew/subcategory/packing/packing.png",
+            title: "Jewelry packaging",
           },
           {
-            detailedSubId: 113,
-            image: "/images/womenJew/subcategory/fineJew/fine_earrings.png",
-            title: "Fine earrings",
-          },
-          {
-            detailedSubId: 114,
-            image: "/images/womenJew/subcategory/fineJew/fine_necklaces.png",
-            title: "Fine necklaces",
-          },
-          {
-            detailedSubId: 115,
-            image: "/images/womenJew/subcategory/fineJew/fine_rings.png",
-            title: "Fine rings",
+            detailedSubId: 117,
+            image: "/images/womenJew/subcategory/packing/display.png",
+            title: "Jewelry display",
           },
         ],
-    },
-    {
-      subCategoryTitle: "JEWELRY PACKAGING & DISPLAY",
-      categoryDetails: [
-        {
-          detailedSubId: 116,
-          image: "/images/womenJew/subcategory/packing/packing.png",
-          title: "Jewelry packaging",
-        },
-        {
-          detailedSubId: 117,
-          image: "/images/womenJew/subcategory/packing/display.png",
-          title: "Jewelry display",
-        },
-      ],
-  }
-    ]
+      },
+    ],
   },
   {
     id: 4,
@@ -563,148 +869,149 @@ export const navCategories = [
         title: "Sneakers",
       },
       {
-        subId: 35,
-        image: "/images/shoe/categories/flats.png",
-        title: "Flats",
-      },
-      {
-        subId: 36,
-        image: "/images/shoe/categories/pumps.png",
-        title: "Pumps",
-      },
-      {
         subId: 37,
         image: "/images/shoe/categories/boots.png",
         title: "Boots",
       },
       {
-        subId: 38,
-        image: "/images/shoe/categories/wedges.png",
-        title: "Wedges & Flatform",
+        subId: 35,
+        image: "/images/shoe/categories/flats.png",
+        title: "Brands",
       },
-      {
-        subId: 39,
-        image: "/images/shoe/categories/clogs.png",
-        title: "Clogs",
-      },
-      {
-        subId: 40,
-        image: "/images/shoe/categories/water-shoes.png",
-        title: "Water Shoes",
-      },
-      {
-        subId: 41,
-        image: "/images/shoe/categories/work.png",
-        title: "Work & Safety Shoes",
-      },
-      {
-        subId: 42,
-        image: "/images/shoe/categories/wide-fit.png",
-        title: "Wide Fit Shoes",
-      },
+      // {
+      //   subId: 36,
+      //   image: "/images/shoe/categories/pumps.png",
+      //   title: "Pumps",
+      // },
+      // {
+      //   subId: 38,
+      //   image: "/images/shoe/categories/wedges.png",
+      //   title: "Wedges & Flatform",
+      // },
+      // {
+      //   subId: 39,
+      //   image: "/images/shoe/categories/clogs.png",
+      //   title: "Clogs",
+      // },
+      // {
+      //   subId: 40,
+      //   image: "/images/shoe/categories/water-shoes.png",
+      //   title: "Water Shoes",
+      // },
+      // {
+      //   subId: 41,
+      //   image: "/images/shoe/categories/work.png",
+      //   title: "Work & Safety Shoes",
+      // },
+      // {
+      //   subId: 42,
+      //   image: "/images/shoe/categories/wide-fit.png",
+      //   title: "Wide Fit Shoes",
+      // },
     ],
-    detailedSubCategory:[
+    detailedSubCategory: [
+      {
+        subCategoryTitle: "SANDALS",
+        categoryDetails: [
+          {
+            detailedSubId: 127,
+            image: "/images/shoe/subcategory/sandals/flat.png",
+            title: "Flat sandals",
+          },
+          {
+            detailedSubId: 128,
+            image: "/images/shoe/subcategory/sandals/heeled.png",
+            title: "Heeled sandals",
+          },
+          {
+            detailedSubId: 129,
+            image: "/images/shoe/subcategory/sandals/platform.png",
+            title: "Wedge sandals",
+          },
+          {
+            detailedSubId: 130,
+            image: "/images/shoe/subcategory/sandals/sport.png",
+            title: "Sports sandals",
+          },
+        ],
+      },
+
+      {
+        subCategoryTitle: "SLIPPERS",
+        categoryDetails: [
+          {
+            detailedSubId: 124,
+            image: "/images/shoe/subcategory/slippers/slides.png",
+            title: "Slides",
+          },
+          {
+            detailedSubId: 125,
+            image: "/images/shoe/subcategory/slippers/home.png",
+            title: "Home slippers",
+          },
+          {
+            detailedSubId: 126,
+            image: "/images/shoe/subcategory/slippers/flip.png",
+            title: "Flip-flops",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "SNEAKERS",
+        categoryDetails: [
+          {
+            detailedSubId: 121,
+            image: "/images/shoe/subcategory/sneakers/casual.png",
+            title: "Casual shoes",
+          },
+          {
+            detailedSubId: 122,
+            image: "/images/shoe/subcategory/sneakers/sport.png",
+            title: "Sports shoes",
+          },
+          {
+            detailedSubId: 123,
+            image: "/images/shoe/subcategory/sneakers/wedge.png",
+            title: "Wedge sneakers",
+          },
+        ],
+      },
       {
         subCategoryTitle: "BOOTS",
         categoryDetails: [
           {
             detailedSubId: 118,
-            image: "/images/shoe/subcategory/boots/fashion.png",
-            title: "Fashion boots",
+            image: "/images/shoe/subcategory/boots/midcalf.png",
+            title: "Women Midcalf",
           },
           {
             detailedSubId: 119,
-            image: "/images/shoe/subcategory/boots/snow.png",
-            title: "Snow boots",
+            image: "/images/shoe/subcategory/boots/kneehigh.png",
+            title: "Women Kneehigh",
           },
           {
             detailedSubId: 120,
-            image: "/images/shoe/subcategory/boots/rain.png",
-            title: "Rain boots",
+            image: "/images/shoe/subcategory/boots/snow.png",
+            title: "Snow boots",
           },
         ],
-    },
-    {
-      subCategoryTitle: "SNEAKERS",
-      categoryDetails: [
-        {
-          detailedSubId: 121,
-          image: "/images/shoe/subcategory/sneakers/casual.png",
-          title: "Casual shoes",
-        },
-        {
-          detailedSubId: 122,
-          image: "/images/shoe/subcategory/sneakers/sport.png",
-          title: "Sports shoes",
-        },
-        {
-          detailedSubId: 123, 
-          image: "/images/shoe/subcategory/sneakers/wedge.png",
-          title: "Wedge sneakers",
-        },
-      ],
-     },
-     {
-      subCategoryTitle: "SLIPPERS",
-      categoryDetails: [
-        {
-          detailedSubId: 124,
-          image: "/images/shoe/subcategory/slippers/slides.png",
-          title: "Slides",
-        },
-        {
-          detailedSubId: 125,
-          image: "/images/shoe/subcategory/slippers/home.png",
-          title: "Home slippers",
-        },
-        {
-          detailedSubId: 126,
-          image: "/images/shoe/subcategory/slippers/flip.png",
-          title: "Flip-flops",
-        },
-      ],
-     },
-     {
-      subCategoryTitle: "SANDALS",
-      categoryDetails: [
-        {
-          detailedSubId: 127,
-          image: "/images/shoe/subcategory/sandals/flat.png",
-          title: "Flat sandals",
-        },
-        {
-          detailedSubId: 128,
-          image: "/images/shoe/subcategory/sandals/heeled.png",
-          title: "Heeled sandals",
-        },
-        {
-          detailedSubId: 129,
-          image: "/images/shoe/subcategory/sandals/platform.png",
-          title: "Platforms & wedge sandals",
-        },
-        {
-          detailedSubId: 130,
-          image: "/images/shoe/subcategory/sandals/sport.png",
-          title: "Sports sandals",
-        },
-      ],
-    },
-    {
-      subCategoryTitle: "BRANDS",
-      categoryDetails: [
-        {
-          detailedSubId: 131,
-          image: "/images/shoe/subcategory/brands/styleoop.png",
-          title: "Styleloop",
-        },
-        {
-          detailedSubId: 132,
-          image: "/images/shoe/subcategory/brands/cucoo.png",
-          title: "CUCCOO",
-        },
-      ],
-    }
-    ]
+      },
+      {
+        subCategoryTitle: "BRANDS",
+        categoryDetails: [
+          {
+            detailedSubId: 131,
+            image: "/images/shoe/subcategory/brands/styleoop.png",
+            title: "Styleloop",
+          },
+          {
+            detailedSubId: 132,
+            image: "/images/shoe/subcategory/brands/cucoo.png",
+            title: "CUCCOO",
+          },
+        ],
+      },
+    ],
   },
   {
     id: 5,
@@ -736,7 +1043,7 @@ export const navCategories = [
         title: "Functional Bags",
       },
     ],
-    detailedSubCategory:[
+    detailedSubCategory: [
       {
         subCategoryTitle: "WOMEN BAGS",
         categoryDetails: [
@@ -752,8 +1059,8 @@ export const navCategories = [
           },
           {
             detailedSubId: 135,
-            image: "/images/bags/subcategory/women/satchels.png",
-            title: "Satchels",
+            image: "/images/bags/subcategory/women/clutches.png",
+            title: "Clutches",
           },
           {
             detailedSubId: 136,
@@ -766,78 +1073,78 @@ export const navCategories = [
             title: "Wallets & cardholders",
           },
         ],
-    },
-    {
-      subCategoryTitle: "MEN BAGS",
-      categoryDetails: [
-        {
-          detailedSubId: 138,
-          image: "/images/bags/subcategory/men/briefcase.png",
-          title: "Briefcase",
-        },
-        {
-          detailedSubId: 139,
-          image: "/images/bags/subcategory/men/backpacks.png",
-          title: "Backpacks",
-        },
-        {
-          detailedSubId: 140,
-          image: "/images/bags/subcategory/men/clutches.png",
-          title: "Clutches & wristlet bags",
-        },
-        {
-          detailedSubId: 141,
-          image: "/images/bags/subcategory/men/tote.png",
-          title: "Tote bags",
-        },
-      ],
-     },
-     {
-      subCategoryTitle: "LUGGAGE & TRAVEL BAGS",
-      categoryDetails: [
-        {
-          detailedSubId: 142,
-          image: "/images/bags/subcategory/luggage/travel.png",
-          title: "Travel bags",
-        },
-        {
-          detailedSubId: 143,
-          image: "/images/bags/subcategory/luggage/luggage.png",
-          title: "Luggage",
-        },
-        {
-          detailedSubId: 144,
-          image: "/images/bags/subcategory/luggage/travel_bag.png",
-          title: "Travel bag accs",
-        },
-      ],
-    },
-    {
-      subCategoryTitle: "FUNCTIONAL BAGS",
-      categoryDetails: [
-        {
-          detailedSubId: 145,
-          image: "/images/bags/subcategory/functional/sports.png",
-          title: "Sports bag",
-        },
-        {
-          detailedSubId: 146,
-          image: "/images/bags/subcategory/functional/lunch.png",
-          title: "Lunch bag",
-        },
-        {
-          detailedSubId: 147,
-          image: "/images/bags/subcategory/functional/tool.png",
-          title: "Tool bag",
-        },
-        {
-          detailedSubId: 148,
-          image: "/images/bags/subcategory/functional/laptop.png",
-          title: "Laptop bag",
-        },
-      ],
-  }
-    ]
+      },
+      {
+        subCategoryTitle: "MEN BAGS",
+        categoryDetails: [
+          {
+            detailedSubId: 138,
+            image: "/images/bags/subcategory/men/briefcase.png",
+            title: "Briefcase",
+          },
+          {
+            detailedSubId: 139,
+            image: "/images/bags/subcategory/men/backpacks.png",
+            title: "Backpacks",
+          },
+          {
+            detailedSubId: 140,
+            image: "/images/bags/subcategory/men/clutches.png",
+            title: "Clutches & wristlet bags",
+          },
+          {
+            detailedSubId: 141,
+            image: "/images/bags/subcategory/men/tote.png",
+            title: "Tote bags",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "LUGGAGE & TRAVEL BAGS",
+        categoryDetails: [
+          {
+            detailedSubId: 142,
+            image: "/images/bags/subcategory/luggage/travel.png",
+            title: "Travel bags",
+          },
+          {
+            detailedSubId: 143,
+            image: "/images/bags/subcategory/luggage/luggage.png",
+            title: "Luggage",
+          },
+          {
+            detailedSubId: 144,
+            image: "/images/bags/subcategory/luggage/travel_bag.png",
+            title: "Travel bag accs",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "FUNCTIONAL BAGS",
+        categoryDetails: [
+          {
+            detailedSubId: 145,
+            image: "/images/bags/subcategory/functional/sports.png",
+            title: "Sports bag",
+          },
+          {
+            detailedSubId: 146,
+            image: "/images/bags/subcategory/functional/lunch.png",
+            title: "Lunch bag",
+          },
+          {
+            detailedSubId: 147,
+            image: "/images/bags/subcategory/functional/tool.png",
+            title: "Tool bag",
+          },
+          {
+            detailedSubId: 148,
+            image: "/images/bags/subcategory/functional/laptop.png",
+            title: "Laptop bag",
+          },
+        ],
+      },
+    ],
   },
   {
     id: 6,
@@ -853,16 +1160,16 @@ export const navCategories = [
         image: "/images/beauty/categories/beauty.jpg",
         title: "Beauty Tools",
       },
-      {
-        subId: 50,
-        image: "/images/beauty/categories/nail.jpg",
-        title: "Nail Hand & Foot Care",
-      },
-      {
-        subId: 51,
-        image: "/images/beauty/categories/hair.jpg",
-        title: "Hair",
-      },
+      // {
+      //   subId: 50,
+      //   image: "/images/beauty/categories/nail.jpg",
+      //   title: "Nail Hand & Foot Care",
+      // },
+      // {
+      //   subId: 51,
+      //   image: "/images/beauty/categories/hair.jpg",
+      //   title: "Hair",
+      // },
       {
         subId: 52,
         image: "/images/beauty/categories/personal-care.jpg",
@@ -874,7 +1181,7 @@ export const navCategories = [
         title: "Wigs & Accs",
       },
     ],
-    detailedSubCategory:[
+    detailedSubCategory: [
       {
         subCategoryTitle: "MAKEUP",
         categoryDetails: [
@@ -939,60 +1246,59 @@ export const navCategories = [
             title: "Hair tools",
           },
         ],
-    },
-    {
-      subCategoryTitle: "PERSONAL CARE",
-      categoryDetails: [
-        {
-          detailedSubId: 155,
-          image: "/images/beauty/subcategory/personal/skin.png",
-          title: "Skin care",
-        },
-        {
-          detailedSubId: 156,
-          image: "/images/beauty/subcategory/personal/body.jpg",
-          title: "Body care",
-        },
-        {
-          detailedSubId: 157,
-          image: "/images/beauty/subcategory/personal/hair.jpg",
-          title: "Hair cares",
-        },
-      ],
-    },
-    {
-      subCategoryTitle: "WIGS & ACCS",
-      categoryDetails: [
-        {
-          detailedSubId: 155,
-          image: "/images/beauty/subcategory/wigs/synthetic.jpg",
-          title: "Synthetic hair wigs",
-        },
-        {
-          detailedSubId: 156,
-          image: "/images/beauty/subcategory/wigs/human.png",
-          title: "Human hair wigs",
-        },
-        {
-          detailedSubId: 157,
-          image: "/images/beauty/subcategory/wigs/wig-tools.jpg",
-          title: "Wig caps & tools",
-        },
-      ],
-    }
-    ]
+      },
+      {
+        subCategoryTitle: "PERSONAL CARE",
+        categoryDetails: [
+          {
+            detailedSubId: 155,
+            image: "/images/beauty/subcategory/personal/skin.png",
+            title: "Skin care",
+          },
+          {
+            detailedSubId: 156,
+            image: "/images/beauty/subcategory/personal/body.jpg",
+            title: "Body care",
+          },
+          {
+            detailedSubId: 157,
+            image: "/images/beauty/subcategory/personal/hair.jpg",
+            title: "Hair cares",
+          },
+        ],
+      },
+      {
+        subCategoryTitle: "WIGS & ACCS",
+        categoryDetails: [
+          {
+            detailedSubId: 155,
+            image: "/images/beauty/subcategory/wigs/synthetic.jpg",
+            title: "Synthetic hair wigs",
+          },
+          {
+            detailedSubId: 156,
+            image: "/images/beauty/subcategory/wigs/human.png",
+            title: "Human hair wigs",
+          },
+          {
+            detailedSubId: 157,
+            image: "/images/beauty/subcategory/wigs/wig-tools.jpg",
+            title: "Wig caps & tools",
+          },
+        ],
+      },
+    ],
   },
-
 ];
-  // {
-  //   id: 7,
-  //   title: "Electronics",
-  // },
-  // {
-  //   id: 8,
-  //   title: "Automative",
-  // },
-  // {
-  //   id: 9,
-  //   title: "Toys & Games",
-  // },
+// {
+//   id: 7,
+//   title: "Electronics",
+// },
+// {
+//   id: 8,
+//   title: "Automative",
+// },
+// {
+//   id: 9,
+//   title: "Toys & Games",
+// },

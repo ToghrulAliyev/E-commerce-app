@@ -11,7 +11,7 @@ type Props = {};
 const Cart = (props: Props) => {
   const basket = useSelector((state: any) => state.user.cart);
 
-  console.log("basket",basket)
+  console.log("basket", basket);
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
   const { token } = useSelector((state: any) => state.refreshToken);
@@ -54,9 +54,9 @@ const Cart = (props: Props) => {
 
   const removeProduct = (id: any) => {
     // if (window.confirm("Do you really want to delete this product")) {
-      const updatedBasket = basket.filter((item: any) => item._id !== id);
-      dispatch(setCart(updatedBasket));
-      addToCart(updatedBasket);
+    const updatedBasket = basket.filter((item: any) => item._id !== id);
+    dispatch(setCart(updatedBasket));
+    addToCart(updatedBasket);
     // }
   };
 
@@ -69,7 +69,7 @@ const Cart = (props: Props) => {
     };
     getTotal();
   }, [basket]);
-  
+
   return (
     <div className="flex justify-between px-4">
       <div className="w-[75%]">
@@ -90,8 +90,8 @@ const Cart = (props: Props) => {
                 <div className="flex flex-col items-start">
                   <div className=" text-red-600 items-center   w-[420px]">
                     <h1 className="text-lg mb-1">{product.title}</h1>
-                
-                    <p className=" text-sm">{product.description}</p>
+
+                    <p className="text-sm">{product.description}</p>
                   </div>
                   <p>{product.content}</p>
                 </div>

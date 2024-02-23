@@ -31,7 +31,7 @@ type ProductTpye = {
   loading: boolean;
   deleteProduct: any;
   productRef?: any;
-  favId?:string
+  favId?: string;
 };
 
 const ProductCard = ({
@@ -50,7 +50,7 @@ const ProductCard = ({
   const { addToCart, addToFavorites, removeFavorites } = useBasket();
   const dispatch = useDispatch();
   const [isFavorited, setIsFavorited] = useState(false);
-  
+
   const handleCheck = (id: any) => {
     const updatedListProducts = listProducts?.map((product: any) => {
       if (product._id === id) {
@@ -68,7 +68,7 @@ const ProductCard = ({
   const removeFav = async (id: any) => {
     try {
       const updatedFavs = allFavorites.filter((item: any) => item._id !== id);
-      await removeFavorites(isLogged,updatedFavs, token);
+      await removeFavorites(isLogged, updatedFavs, token);
     } catch (error) {
       console.error("Error removing favorite:", error);
     }
@@ -82,8 +82,12 @@ const ProductCard = ({
     });
   }
 
-  const handleFav = async (product: any,isLogged: any,allFavorites: any,token: any) => {
- 
+  const handleFav = async (
+    product: any,
+    isLogged: any,
+    allFavorites: any,
+    token: any
+  ) => {
     if (isFavorited) {
       await removeFav(product._id);
     } else {
@@ -97,10 +101,8 @@ const ProductCard = ({
       setIsFavorited(allFavorites.some((fav: any) => fav._id === product._id));
     }
   }, [product._id, allFavorites]);
-  
 
   // let sold = Math.floor(Math.random()*200)
-
 
   return (
     <div
@@ -142,11 +144,17 @@ const ProductCard = ({
 
           <div className="p-2 ">
             <div className="w-full ">
-              <h2 className=" text-lg text-red-600">{product.title}</h2>
-              <p className=" text-sm ">{product.description}</p>
+              <h2 className="text-lg text-red-600 m-0 overflow-hidden line-clamp-1">
+                {product.title}
+              </h2>
+              <p className="m-0 overflow-hidden line-clamp-2 text-sm">
+                {product.description}
+              </p>
             </div>
             <div className="flex justify-between mt-4 items-center">
-              <span className="py-2 block text-xl font-bold text-[#fa6338]">${product.price} </span>
+              <span className="py-2 block text-xl font-bold text-[#fa6338]">
+                ${product.price}{" "}
+              </span>
 
               <button
                 onClick={() => addToCart(product, isLogged, basket, token)}

@@ -1,6 +1,6 @@
 import { BsSearch } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { setCategory, setSearch, setSort } from "../../store/slices/ApiSlice";
+import { setCategory, setSearch, setSort, setSubcategory } from "../../store/slices/ApiSlice";
 import { setCallback } from "../../store/slices/CallbackSlice";
 import { navCategories } from "../Navbar/NavCategories";
 
@@ -18,6 +18,8 @@ const Filter = (props: Props) => {
   
     if (categoryName === "") {
       dispatch(setCategory("" as any));
+      dispatch(setSubcategory("" as any));
+
       dispatch(setCallback(!callback as any));
     } else {
       const category = navCategories.find(
