@@ -66,7 +66,7 @@ export const navCategories = [
     ],
     detailedSubCategory: [
       {
-        subCategoryTitle: "DRESSES",
+        subCategoryTitle: "Dresses",
         categoryDetails: [
           {
             detailedSubId: 1,
@@ -103,7 +103,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "BOTTOMS",
+        subCategoryTitle: "Bottoms",
         categoryDetails: [
           {
             detailedSubId: 9,
@@ -128,7 +128,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "DENIM",
+        subCategoryTitle: "Denim",
         categoryDetails: [
           {
             detailedSubId: 13,
@@ -153,7 +153,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "SWEATERS",
+        subCategoryTitle: "Sweaters",
         categoryDetails: [
           {
             detailedSubId: 17,
@@ -193,7 +193,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "HOODIES & SWEATSHIRTS",
+        subCategoryTitle: "Hoodies & sweatshirts",
         categoryDetails: [
           {
             detailedSubId: 24,
@@ -208,7 +208,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "SUITS",
+        subCategoryTitle: "Suits",
         categoryDetails: [
           {
             detailedSubId: 26,
@@ -228,7 +228,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "CO-ORDS",
+        subCategoryTitle: "Co-ords",
         categoryDetails: [
           {
             detailedSubId: 29,
@@ -253,7 +253,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "JACKETS & COATS",
+        subCategoryTitle: "Jackets & coats",
         categoryDetails: [
           {
             detailedSubId: 33,
@@ -283,7 +283,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "PARTY WEAR",
+        subCategoryTitle: "Party wear",
         categoryDetails: [
           {
             detailedSubId: 38,
@@ -362,7 +362,7 @@ export const navCategories = [
     ],
     detailedSubCategory: [
       {
-        subCategoryTitle: "BOTTOMS",
+        subCategoryTitle: "Bottoms",
         categoryDetails: [
           {
             detailedSubId: 41,
@@ -382,7 +382,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "HOODIES & SWEATSHIRTS",
+        subCategoryTitle: "Hoodies & sweatshirts",
         categoryDetails: [
           {
             detailedSubId: 44,
@@ -402,7 +402,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "CO-ORDS",
+        subCategoryTitle: "Co-ords",
         categoryDetails: [
           {
             detailedSubId: 47,
@@ -432,7 +432,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "OUTERWEAR",
+        subCategoryTitle: "Outerwear",
         categoryDetails: [
           {
             detailedSubId: 52,
@@ -467,7 +467,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "DENIM",
+        subCategoryTitle: "Denim",
         categoryDetails: [
           {
             detailedSubId: 58,
@@ -492,7 +492,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "SWEATERS",
+        subCategoryTitle: "Sweaters",
         categoryDetails: [
           {
             detailedSubId: 62,
@@ -524,7 +524,7 @@ export const navCategories = [
       //   ],
       // },
       {
-        subCategoryTitle: "SHOES",
+        subCategoryTitle: "Shoes",
         categoryDetails: [
           {
             detailedSubId: 72,
@@ -580,7 +580,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "ACCESSORIES",
+        subCategoryTitle: "Accessories",
         categoryDetails: [
           {
             detailedSubId: 83,
@@ -693,7 +693,7 @@ export const navCategories = [
       //   ],
       // },
       {
-        subCategoryTitle: "HAIR ACCESSORIES",
+        subCategoryTitle: "Hair accessories",
         categoryDetails: [
           {
             detailedSubId: 93,
@@ -718,7 +718,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "GLASSES & ACCS",
+        subCategoryTitle: "Glasses & Accs",
         categoryDetails: [
           {
             detailedSubId: 97,
@@ -748,7 +748,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "HATS",
+        subCategoryTitle: "Hats",
         categoryDetails: [
           {
             detailedSubId: 102,
@@ -778,7 +778,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "FINE JEWELRY",
+        subCategoryTitle: "Fine jewelry",
         categoryDetails: [
           {
             detailedSubId: 112,
@@ -803,7 +803,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "WATCHES",
+        subCategoryTitle: "Watches",
         categoryDetails: [
           {
             detailedSubId: 107,
@@ -833,7 +833,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "JEWELRY PACKAGING",
+        subCategoryTitle: "Jewelry packaging",
         categoryDetails: [
           {
             detailedSubId: 116,
@@ -911,7 +911,7 @@ export const navCategories = [
     ],
     detailedSubCategory: [
       {
-        subCategoryTitle: "SANDALS",
+        subCategoryTitle: "Sandals",
         categoryDetails: [
           {
             detailedSubId: 127,
@@ -937,7 +937,7 @@ export const navCategories = [
       },
 
       {
-        subCategoryTitle: "SLIPPERS",
+        subCategoryTitle: "Slippers",
         categoryDetails: [
           {
             detailedSubId: 124,
@@ -957,7 +957,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "SNEAKERS",
+        subCategoryTitle: "Sneakers",
         categoryDetails: [
           {
             detailedSubId: 121,
@@ -977,7 +977,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "BOOTS",
+        subCategoryTitle: "Boots",
         categoryDetails: [
           {
             detailedSubId: 118,
@@ -997,7 +997,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "BRANDS",
+        subCategoryTitle: "Brands",
         categoryDetails: [
           {
             detailedSubId: 131,
@@ -1045,7 +1045,7 @@ export const navCategories = [
     ],
     detailedSubCategory: [
       {
-        subCategoryTitle: "WOMEN BAGS",
+        subCategoryTitle: "Women Bags",
         categoryDetails: [
           {
             detailedSubId: 133,
@@ -1075,7 +1075,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "MEN BAGS",
+        subCategoryTitle: "Men Bags",
         categoryDetails: [
           {
             detailedSubId: 138,
@@ -1100,7 +1100,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "LUGGAGE & TRAVEL BAGS",
+        subCategoryTitle: "Luggage & Travel Bags",
         categoryDetails: [
           {
             detailedSubId: 142,
@@ -1183,7 +1183,7 @@ export const navCategories = [
     ],
     detailedSubCategory: [
       {
-        subCategoryTitle: "MAKEUP",
+        subCategoryTitle: "Makeup",
         categoryDetails: [
           {
             detailedSubId: 149,
@@ -1218,7 +1218,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "BEAUTY TOOLS",
+        subCategoryTitle: "Beauty Tools",
         categoryDetails: [
           {
             detailedSubId: 155,
@@ -1248,7 +1248,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "PERSONAL CARE",
+        subCategoryTitle: "Personal Care",
         categoryDetails: [
           {
             detailedSubId: 155,
@@ -1268,7 +1268,7 @@ export const navCategories = [
         ],
       },
       {
-        subCategoryTitle: "WIGS & ACCS",
+        subCategoryTitle: "Wigs & Accs",
         categoryDetails: [
           {
             detailedSubId: 155,

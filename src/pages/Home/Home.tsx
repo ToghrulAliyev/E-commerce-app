@@ -48,7 +48,6 @@ function Home({}: Props) {
   if (!listProducts) {
     return <Loading />;
   }
- 
 
   return (
     <>

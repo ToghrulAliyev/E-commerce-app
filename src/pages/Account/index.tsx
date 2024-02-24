@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { BsTruck } from "react-icons/bs";
 import { CiHeart, CiLock } from "react-icons/ci";
 import { FaCreditCard } from "react-icons/fa";
@@ -13,37 +13,37 @@ type Props = {
 
 const navLinks = [
   {
-    id:"order",
+    id: "order",
     name: "Orders",
     link: "/account/my-orders",
     icon: <BsTruck className=" text-3xl" />,
   },
   {
-    id:"favorite",
+    id: "favorite",
     name: "Favorites",
     link: "/account/favorites",
     icon: <CiHeart className=" text-3xl" />,
   },
   {
-    id:'membership',
+    id: "membership",
     name: "Membership Information",
     link: "/account/membership",
     icon: <PiUserThin className=" text-2xl" />,
   },
   {
-    id:"address",
+    id: "address",
     name: "Address Information",
     link: "/account/address",
     icon: <MdOutlineMyLocation className=" text-2xl" />,
   },
   {
-    id:"cards",
+    id: "cards",
     name: "Registered Cards",
     link: "/account/cards",
     icon: <FaCreditCard className=" text-2xl" />,
   },
   {
-    id:"password",
+    id: "password",
     name: "Change Password",
     link: "/account/change-password",
     icon: <CiLock className=" text-2xl" />,
@@ -53,14 +53,8 @@ const navLinks = [
 const MyAccout = ({ children }: Props) => {
   const { isLogged } = useSelector((state: any) => state.user);
   const navigate = useNavigate();
-   
-  const childrenId = children.props.id
-  
-  useEffect(() => {
-    if (!isLogged) {
-      navigate("/");
-    }
-  }, [isLogged, navigate]);
+
+  const childrenId = children.props.id;
 
   return (
     <div className="flex w-full">
@@ -69,7 +63,9 @@ const MyAccout = ({ children }: Props) => {
           <div key={link.name}>
             <Link
               to={link.link}
-              className={`hover:bg-gray-100 ${childrenId === link.id ? "bg-[#F3EEEA] text-gray-500" : "" }  duration-300 flex px-6 py-6 items-center gap-2 rounded-lg`}
+              className={`hover:bg-gray-100 ${
+                childrenId === link.id ? "bg-[#F3EEEA] text-gray-500" : ""
+              }  duration-300 flex px-6 py-6 items-center gap-2 rounded-lg`}
             >
               {link.icon}
               {link.name}

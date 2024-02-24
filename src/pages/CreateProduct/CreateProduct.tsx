@@ -64,11 +64,11 @@ const CreateProduct = (props: Props) => {
       setOnEdit(true);
       allProducts?.forEach((product: any) => {
         if (product._id === params.id) {
-          console.log("product",product)
+          console.log("product", product);
           setCurrentProducts(product);
           setImages(product.images);
-          setColor(product.color)
-          setSize(product.size)
+          setColor(product.color);
+          setSize(product.size);
         }
       });
     } else {
@@ -149,12 +149,12 @@ const CreateProduct = (props: Props) => {
     }
   };
 
- 
-
-  const handleRemoveColor = (currentColor:string)=>{
-    const updatedColors = color.filter((current:any)=> current.color !== currentColor)
-    setColor(updatedColors)
-  }
+  const handleRemoveColor = (currentColor: string) => {
+    const updatedColors = color.filter(
+      (current: any) => current.color !== currentColor
+    );
+    setColor(updatedColors);
+  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -195,7 +195,6 @@ const CreateProduct = (props: Props) => {
   }, []);
   return (
     <div className="flex w-full justify-between p-4 mt-12">
-      
       <div className="flex flex-col w-1/2">
         <div
           className={`max-w-[450px] h-[500px] w-full hover:opacity-80 duration-300 border ${
@@ -353,14 +352,19 @@ const CreateProduct = (props: Props) => {
                 return (
                   <div className="flex items-center" key={index}>
                     <li
-                    className="p-2 m-1 text-black w-full"
-                    style={{ backgroundColor: color.color }}
-                  >
-                   {`${color.colorName}: ${color.color}`} {/* Display both color name and value */}
-                  </li>
-                  <button onClick={()=>handleRemoveColor(color.color)} type="button" className="bg-red-500 py-1 text-white">
-                    <AiOutlineClose className="w-10 h-7" />
-                  </button>
+                      className="p-2 m-1 text-black w-full"
+                      style={{ backgroundColor: color.color }}
+                    >
+                      {`${color.colorName}: ${color.color}`}{" "}
+                      {/* Display both color name and value */}
+                    </li>
+                    <button
+                      onClick={() => handleRemoveColor(color.color)}
+                      type="button"
+                      className="bg-red-500 py-1 text-white"
+                    >
+                      <AiOutlineClose className="w-10 h-7" />
+                    </button>
                   </div>
                 );
               })}

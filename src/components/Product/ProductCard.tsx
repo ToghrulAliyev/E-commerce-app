@@ -106,7 +106,7 @@ const ProductCard = ({
 
   return (
     <div
-      className={` overflow-hidden  2xl:flex-[0_0_19.08%] xl:flex-[0_0_23.95%] lg:flex-[0_0_32.13%] md:flex-[0_0_31.6%] sm:flex-[0_0_100%] flex-[0_0_100%] relative hover:shadow-2xl duration-300`}
+      className={`min-w-[268px] overflow-hidden  2xl:flex-[0_0_19.08%] xl:flex-[0_0_23.95%] lg:flex-[0_0_32.13%] md:flex-[0_0_31.6%] sm:flex-[0_0_100%] flex-[0_0_100%] relative hover:shadow-2xl duration-300`}
     >
       <div
         className="flex flex-col gap-[10px] justify-between h-full"

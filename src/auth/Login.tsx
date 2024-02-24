@@ -12,10 +12,8 @@ const Login = (props: Props) => {
   const [user, setUser] = useState({ email: "", password: "" });
   const [passShow, setPassShow] = useState<boolean>(false);
   const { isAdmin, isLogged } = useSelector((state: any) => state.user);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-
-  
   function showPass() {
     setPassShow(!passShow);
   }
@@ -27,17 +25,20 @@ const Login = (props: Props) => {
   const handleLoginSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await axios.post(`${base}/user/login`,{ ...user },{ withCredentials: true });
-      localStorage.setItem("userLogin", "true"); 
+      await axios.post(
+        `${base}/user/login`,
+        { ...user },
+        { withCredentials: true }
+      );
+      localStorage.setItem("userLogin", "true");
       window.location.href = "/";
     } catch (err: any) {
       alert(err.response.data.msg);
     }
   };
 
-
-  if(isAdmin || isLogged){
-    navigate('/')
+  if (isAdmin || isLogged) {
+    navigate("/");
   }
 
   return (
@@ -78,9 +79,7 @@ const Login = (props: Props) => {
             value={user.password}
           />
         </div>
-        <PrimaryButton type="submit">
-          Login
-        </PrimaryButton>
+        <PrimaryButton type="submit">Login</PrimaryButton>
       </div>
     </form>
   );

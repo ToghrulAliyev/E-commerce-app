@@ -100,19 +100,19 @@ const AddressAddModal: FC<Props> = ({ openModal, setOpenModal }) => {
             <div className="flex flex-col gap-2">
               <label htmlFor="address">Address</label>
               <textarea
-                className="border border-solid py-2 rounded px-3 border-gray-200 h-28"
+                className="border border-solid py-2 rounded px-3 border-gray-200 h-28 resize-none"
                 cols={30}
                 rows={10}
                 name="address"
               />
             </div>
             <div className="flex flex-col gap-2">
-            <label htmlFor="title">Address Title</label>
-            <input
-                  className="border border-solid border-gray-300 rounded px-[10px] py-[5px]"
-                  type="text"
-                  name="title"
-                />
+              <label htmlFor="title">Address Title</label>
+              <input
+                className="border border-solid border-gray-300 rounded px-[10px] py-[5px]"
+                type="text"
+                name="title"
+              />
             </div>
             <button
               type="submit"

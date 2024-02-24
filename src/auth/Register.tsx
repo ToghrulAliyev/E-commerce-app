@@ -10,11 +10,11 @@ import PrimaryButton from "../components/Buttons/PrimaryButton";
 type Props = {};
 
 const Register = (props: Props) => {
-  const [user, setUser] = useState({ name:"", email: "", password: "" });
+  const [user, setUser] = useState({ name: "", email: "", password: "" });
   const [passShow, setPassShow] = useState<boolean>(false);
   const { isAdmin, isLogged } = useSelector((state: any) => state.user);
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   function showPass() {
     setPassShow(!passShow);
   }
@@ -35,11 +35,10 @@ const Register = (props: Props) => {
     }
   }
 
-  
-  if(isAdmin || isLogged){
-    navigate('/')
+  if (isAdmin || isLogged) {
+    navigate("/");
   }
- 
+
   return (
     <div className="h-[80vh] p-20">
       <h1 className="text-center text-4xl">Register</h1>
@@ -60,7 +59,7 @@ const Register = (props: Props) => {
           />
         </div>
         <div className="w-1/2 flex justify-center items-center relative">
-        <TfiEmail className="text-red-500 text-2xl absolute left-[1.4rem]" />
+          <TfiEmail className="text-red-500 text-2xl absolute left-[1.4rem]" />
           <input
             type="email"
             name="email"
@@ -93,9 +92,7 @@ const Register = (props: Props) => {
             value={user.password}
           />
         </div>
-        <PrimaryButton type="submit">
-          Register
-        </PrimaryButton>
+        <PrimaryButton type="submit">Register</PrimaryButton>
       </form>
     </div>
   );
